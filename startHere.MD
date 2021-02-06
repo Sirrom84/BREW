@@ -39,7 +39,7 @@ As a user, I shouldn't be able to edit other users posts, because I don't own th
 
 ## User Scenarios
 
-## @Home Page
+#;# @Home Page
 
 Displays:
 1. User's list
@@ -73,6 +73,41 @@ General Functions:
 
 **For Products
 1. When you click the name, it should direct to google shopping
+
+## APIS for items
+
+When should we use API? --> when the user enters an item to the search box.
+
+That item should filter through the APIs and return the list that it matches.
+
+** Restaurants **
+
+input: text (ex. name of restaurant)
+
+using two step api:
+
+1. find place: takes a text (string) input and returns a place in JSON
+-- requires: key, input, inputtype
+
+find place: https://maps.googleapis.com/maps/api/place/findplacefromtext/output?parameters
+
+2. place details: takes in place_id from find place and returns details of the place in JSON
+
+place details: https://maps.googleapis.com/maps/api/place/details/output?parameters
+
+(source: https://developers.google.com/places/web-service/details)
+
+3. OPTIONAL: directions
+
+** Products **
+
+
+
+** Books **
+
+source: google books (https://developers.google.com/books/docs/overview)
+
+
 
 
 ## Databases
