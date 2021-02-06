@@ -39,7 +39,40 @@ As a user, I shouldn't be able to edit other users posts, because I don't own th
 
 ## User Scenarios
 
+## @Home Page
 
+Displays:
+1. User's list
+2. Search Box
+3. Footer with add, home, user buttons/icons
+
+Functions:
+1. When you enter a new item in the search box, it will auto-categorize into the appropriate list.
+2. When you click a list, it shows the full list (along with dates added)
+3. When you click the plus icon, you can add a new list and give it a name
+4. When you click user, you can see the users profile (picture, name, email)
+
+## @List Page
+
+Display:
+1. All items in the list with a checkbox and the date it was added
+2. Footer with add, home, user buttons/icons
+
+General Functions:
+1. When you click __, you can edit or delete items in the list
+2. When you click the star, you can favourite and keep the item at the top of the list ---- ?
+
+**For Restaurant:
+1. When you click the restaurant, it should direct the user to google maps to the restaurant
+
+**For Films:
+1. When you click the title, it should direct to ______
+
+**For Books
+1. When you click the title, it should direc to google shopping
+
+**For Products
+1. When you click the name, it should direct to google shopping
 
 
 ## Databases
