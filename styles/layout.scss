@@ -2,8 +2,41 @@
 
 body {
   background-color: #EEE;
+  padding: 0 1vw;
 
   h1 {
     color: #244751;
   }
+
+  .home {
+    .search {
+      border: 2px #244751;
+      padding: 5vh 0;
+
+    }
+    input {
+      width: 90vw;
+    }
+    .box {
+      border: 2px solid black;
+    }
+    .grid {
+      display: flex;
+      flex-direction: wrap;
+    }
+    .box {
+      width: 45vw;
+      height: 45vw;
+      margin: 10px;
+    }
+    .icons {
+      display: flex;
+      justify-content: space-around;
+    }
+    .fas {
+      height: 100px;
+    }
+  }
+
 }
+
