@@ -1,9 +1,30 @@
 // See: https://sass-lang.com/
 
-body {
-  background-color: #EEE;
-
-  h1 {
-    color: #244751;
-  }
+html, body {
+  height: 100%;
+  margin: 0;
+  font-size: 32px;
 }
+.grid2x2 {
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.grid2x2 > div {
+  display: flex;
+  flex-basis: calc(50% - 40px);
+  justify-content: center;
+  flex-direction: column;
+}
+.grid2x2 > div > div {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.box { margin: 20px; }
+.box1 { background-color: rgb(226, 104, 104); }
+.box2 { background-color: rgb(243, 201, 124); }
+.box3 { background-color: rgb(228, 170, 228); }
+.box4 { background-color: grey; }
