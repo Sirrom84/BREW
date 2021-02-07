@@ -35,6 +35,7 @@ CREATE TABLE products (
   date_added DATE,
   is_complete BOOLEAN
 );
+
 DROP TABLE IF EXISTS restaurants CASCADE;
 CREATE TABLE restaurants (
   id SERIAL PRIMARY KEY NOT NULL,

@@ -6,3 +6,47 @@ VALUES ('Alice', 'alice@gmail.com', 'password'),
 ('Maggie', 'maggie@gmail.com', 'password'),
 ('John', 'john@gmail.com', 'password');
 
+GRANT SELECT, UPDATE, INSERT, UPDATE on users to labber;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
