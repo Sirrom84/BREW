@@ -13,6 +13,9 @@
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
 
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;700&display=swap" rel="stylesheet">
 
   </head>
 
@@ -23,20 +26,24 @@
    <!-- Top Nav Bar -->
 
 <nav class= "navbar">
-<h1 class="nav">What To Do/logo?</h1>
+<h1 class="nav">To Do List</h1>
 
-<form class="new-item">
-<textarea name="text" ></textarea>
-<button type="submit" class="button">ADD</button>
-</form>
-<div class="user-profile">Image of User</div>
+<h3 class="user-profile">Image of User</h3>
 </nav>
 
 
 <!-- Main container-->
 
 
-<main class=" main_container">
+<main class=" main-container">
+
+  <!-- Enter Item -->
+
+  <form class="new-item">
+    <textarea name="text" ></textarea>
+    <button type="submit" class="text-button">ADD</button>
+    </form>
+
 
   <!-- List 1 -->
 
@@ -47,7 +54,7 @@
     <section class="all-items">
     <article class="item">
       <header>
-        <h1>Name of Book</h1>
+        <h2>Name of Book</h2>
       </header>
 
       <footer>
@@ -57,7 +64,7 @@
 
     <article class="item">
       <header>
-        <h1>Name of Book2</h1>
+        <h2>Name of Book</h2>
       </header>
 
       <footer>
@@ -67,7 +74,7 @@
 
     <article class="item">
       <header>
-        <h1>Name of Book3</h1>
+        <h2>Name of Book</h2>
       </header>
 
       <footer>
