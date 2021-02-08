@@ -1,6 +1,7 @@
 $(() => {
 
-$(function () {
+// function to load the items -- needs work
+function loadBooks () {
   $.ajax({
     method: "GET",
     url: "/books"
@@ -9,16 +10,9 @@ $(function () {
       $("<div>").text(user.name).appendTo($("body"));
     }
   });;
+};
 
-})
-
-  // 1. function to create items
-  // 2. function to render the items
-  // 3. function to load the items
-
-
-
-//STOPPING HERE FOR NOW THINGS ARE LOOKING GOOD!
+  // button to display items in a list
   $('.reading-button').click(function (event) {
     if ($('.all-items').is(":visible")) {
       $('.all-items').slideUp();
@@ -27,13 +21,26 @@ $(function () {
     }
   });
 
-  // button to display items
 
+  // function to render items
+  // input: array of objects where each book is a book from the database
+  // this function will take each object from the array and run the generateNewElement function, which will create a new items box for each object
+  function renderBook(items) {
+    $('.all-items').empty();
+
+    for (item of items) {
+      generateNewElement(item);
+    }
+  };
+
+
+  // test code for generateNewElement function
   const obj = {
-    "title": "sherk",
-    "date_added": "2019-02-03"
+    "title": "shrek",
+    "date_added": "April 1"
   }
 
+  // function to create new items and push them into the list
   const generateNewElement = function(obj) {
     const title = obj.title;
     const dateAdded = obj.date_added;
@@ -41,25 +48,21 @@ $(function () {
     const $markup = `
     <article class="item">
       <header>
-        <h1>${title}</h1>
+        <h2>${title}</h2>
       </header>
 
       <footer>
-        <h6>${dateAdded}</h6>
+        <h6>Added: ${dateAdded}</h6>
       </footer>
   </article>
     `;
 
     const $item = $('.all-items').prepend($markup);
-    console.log("NEW ITEM ADDED:", $item)
     return $item;
   };
 
-generateNewElement(obj);
-
+  generateNewElement(obj)
 
 });
-
-
 
 
