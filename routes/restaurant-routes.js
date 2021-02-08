@@ -18,6 +18,7 @@ module.exports = (db) => {
       });
   });
 
+
   router.get("/:id", (req, res) => {
     db.query(`SELECT * FROM restaurants WHERE user_id = $1;`, [req.params.id])
       .then(data => {
