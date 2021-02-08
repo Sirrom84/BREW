@@ -63,14 +63,26 @@ main {
   table {
     border-collapse: collapse;
     font-weight: 300;
+    width: 80%;
 
     tr {
       border-bottom: 1pt solid rgba(255, 255, 255, 0.233);
-      height: 50px;
-    }
+      height: 5rem;
 
-    td {
-      padding: 1rem;
+      td {
+        padding: 1rem;
+        text-align: left;
+      }
+      // .title-id {
+      //   text-align: left;
+      // }
+
+      // .author-td {
+      //   text-align: left;
+      // }
+      // .date-td {
+      //   text-align: right;
+      // }
     }
   }
 }

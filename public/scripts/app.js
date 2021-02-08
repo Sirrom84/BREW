@@ -36,7 +36,7 @@ function loadBooks () {
 
   // test code for generateNewElement function
   const obj = {
-    "title": "HP Books",
+    "title": "Harry Potter and the Half-Blood Prince",
     "date_added": "April 1",
     "author": "J K Rowling"
   }
@@ -53,9 +53,9 @@ function loadBooks () {
     <tbody>
         <tr>
             <td><input type="checkbox" name="" value=""></td>
-            <td><b>${title}</b></td>
-            <td>${author}</td>
-            <td>Added on: ${dateAdded}</td>
+            <td class="title-td"><b>${title}</b></td>
+            <td class="author-td">${author}</td>
+            <td class="date-td">Added on: ${dateAdded}</td>
         </tr>
     </tbody>
     <table>
