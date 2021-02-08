@@ -1,116 +1,83 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <title>To Do List</title>
+<head>
+  <title>To Do List</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+</head>
 
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+<body>
 
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+  <nav>
+    <span>What TO_</span>
+  </nav>
 
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
+  <main>
 
+    <!-- BOOKS -->
 
-  </head>
+    <div class="reading reading-button card" id="read">
+      <!-- visible card -->
+      <h2>Read</h2>
+      <div class="counter">9 books</div>
 
+      <section class="all-items">
+        <article class="item">
+          <h3>Name of Book</h1>
+            <small>Added: Mar 2</small>
+        </article>
 
-  <!-- Main container for all lists -->
-  <body>
+        <article class="item">
+          <h3>Name of Book2</h1>
+            <small>Added: Mar 2</small>
+        </article>
+        <article class="item">
+          <h3>Name of Book3</h1>
+            <small>Added: Mar 2</small>
+        </article>
+      </section>
+    </div>
 
-   <!-- Top Nav Bar -->
+    <!-- List 2 -->
 
-<nav class= "navbar">
-<h1 class="nav">What To Do/logo?</h1>
+    <div class="eating card">
+      <h2>Eat</h2>
+      <div class="counter">25 restaurants</div>
+    </div>
 
-<form class="new-item">
-<textarea name="text" ></textarea>
-<button type="submit" class="button">ADD</button>
-</form>
-<div class="user-profile">Image of User</div>
-</nav>
+    <!-- List 3 -->
+    <div class="watching card">
+      <h2>Watch</h2>
+      <div class="counter">19 shows & movies</div>
+    </div>
 
+    <!-- List 4 -->
 
-<!-- Main container-->
+    <div class="buying card">
+      <h2>Buy</h2>
+      <div class="counter">3 products</div>
+    </div>
 
+  </main>
 
-<main class=" main_container">
+  <!-- Footer -->
 
-  <!-- List 1 -->
-
-  <div class="reading">
-    <button type="submit" class="reading-button"> What To Read </button>
-    <div class="counter">9 items</div>
-
-    <section class="all-items">
-    <article class="item">
-      <header>
-        <h1>Name of Book</h1>
-      </header>
-
-      <footer>
-        <h6>Added: Mar 2</h6>
-      </footer>
-    </article>
-
-    <article class="item">
-      <header>
-        <h1>Name of Book2</h1>
-      </header>
-
-      <footer>
-        <h6>Added: Mar 2</h6>
-      </footer>
-    </article>
-
-    <article class="item">
-      <header>
-        <h1>Name of Book3</h1>
-      </header>
-
-      <footer>
-        <h6>Added: Mar 2</h6>
-      </footer>
-    </article>
-  </section>
-
-
-
-  </div>
+  <footer>
+    <div class="icon-cont">
+      <i class="uil uil-plus"></i>
+    </div>
+  </footer>
 
 
-  <!-- List 2 -->
+</body>
 
-  <div class="eating">
-    <button type="submit" class="eating-button"> What To Eat </button>
-    <div class="counter">9 items</div>
-  </div>
-
-  <!-- List 3 -->
-  <div class="watching">
-    <button type="submit" class="watching-button"> What To Watch </button>
-    <div class="counter">9 items</div>
-  </div>
-
-  <!-- List 4 -->
-
-  <div class="buying">
-    <button type="submit" class="buying-button"> What To Buy </button>
-    <div class="counter">9 items</div>
-  </div>
-
-</main>
-
-<!-- Footer -->
-
-<footer class="footer">
-
-
-
-</footer>
-
-
-  </body>
 </html>
