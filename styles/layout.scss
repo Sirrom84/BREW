@@ -10,17 +10,22 @@ body {
   font-size: 16px;
   font-family: "Poppins", sans-serif;
   color: #3b3b3b;
+  display: flex;
+  flex-direction: column;
 }
 
 nav {
-  padding: 5vh;
+  padding: 2vh;
   font-size: 3rem;
   font-weight: 600;
+  position: fixed;
+  background-color: white;
+  width: 100%;
 }
 
 main {
   width: 80%;
-  margin: 0 auto;
+  margin: 15vh auto 0;
   padding-left: 10vw;
   display: flex;
   justify-content: flex-end;

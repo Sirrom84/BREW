@@ -47,13 +47,8 @@ function loadBooks () {
 
     const $markup = `
     <article class="item">
-      <header>
         <h2>${title}</h2>
-      </header>
-
-      <footer>
-        <h6>Added: ${dateAdded}</h6>
-      </footer>
+        <small>Added: ${dateAdded}</small>
   </article>
     `;
 
