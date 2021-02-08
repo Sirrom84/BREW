@@ -36,20 +36,29 @@ function loadBooks () {
 
   // test code for generateNewElement function
   const obj = {
-    "title": "shrek",
-    "date_added": "April 1"
+    "title": "HP Books",
+    "date_added": "April 1",
+    "author": "J K Rowling"
   }
 
   // function to create new items and push them into the list
   const generateNewElement = function(obj) {
     const title = obj.title;
     const dateAdded = obj.date_added;
+    const author = obj.author;
 
     const $markup = `
-    <article class="item">
-        <h2>${title}</h2>
-        <small>Added: ${dateAdded}</small>
-  </article>
+
+    <table class="item">
+    <tbody>
+        <tr>
+            <td><input type="checkbox" name="" value=""></td>
+            <td><b>${title}</b></td>
+            <td>${author}</td>
+            <td>Added on: ${dateAdded}</td>
+        </tr>
+    </tbody>
+    <table>
     `;
 
     const $item = $('.all-items').prepend($markup);

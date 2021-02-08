@@ -8,7 +8,6 @@
 
 */
 
-
 html,
 body {
   height: 100%;
@@ -52,12 +51,27 @@ main {
   h2 {
     margin-top: 0;
     font-weight: 400;
+    font-size: 2rem;
   }
 
   .counter {
     text-transform: uppercase;
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.5)
+  }
+
+  table {
+    border-collapse: collapse;
+    font-weight: 300;
+
+    tr {
+      border-bottom: 1pt solid rgba(255, 255, 255, 0.233);
+      height: 50px;
+    }
+
+    td {
+      padding: 1rem;
+    }
   }
 }
 
@@ -80,6 +94,8 @@ main {
   --light:#EDDEF6;
   --dark: #CEB6D9;
 }
+
+
 
 footer {
   display: flex;
