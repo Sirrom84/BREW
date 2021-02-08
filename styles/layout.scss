@@ -1,74 +1,130 @@
 // See: https://sass-lang.com/
 
-body {
-  background-color: #EEE;
 
-  h1 {
-    color: #244751;
-  }
-}
+//----- HEADER STYLING -----//
 
+// top header bar (parent container)
 .navbar {
   display: flex;
-  border: solid black 5px;
-  justify-content: space-around;
-  background-color: yellow;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(202, 230, 238);
 }
 
+// for title: To Do List (child container)
 .nav {
-  border: 2px solid blue;
+  color: #363636;
+  padding-left: 50px;
+  font-family: 'Mukta', sans-serif;
 }
 
-// Lists
+// for title: Image of User (child container)
+.user-profile {
+  color: #363636;
+  padding-right: 50px;
+}
 
-.main_container {
+//----- BODY STYLING -----//
+
+// main container to hold textbox and ALL lists (parent container)
+.main-container {
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: space-evenly;
   align-items: center;
   align-content: center;
-  border: 3px solid green;
+  border: 3px solid rgb(0, 0, 0);
 }
 
-// List 1
+// for the form where a new item is addded
+// (child container to main-container)
+// (parent container to textarea and button)
+.new-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+}
 
+// for the actual textarea (child container)
+textarea {
+  background-color: transparent;
+  border : 0px solid #363636;
+  margin: 20px;
+  outline: none;
+  border-bottom-width : 5px;
+  resize: none;
+  flex-grow: 1;
+  font-size: 25px;
+}
+
+// for the ADD button (child container)
+.text-button {
+  display:inline-block;
+  font-family: 'Mukta', sans-serif;
+  padding:0.7em;
+  margin: 0.2em;
+  font-size: 16px;
+  border: 0.2em solid #363636;
+  background-color: transparent;
+  border-radius: 12px;
+  transition: all 0.2s;
+  font-weight: bold;
+  display: block;
+}
+
+// hover effect over ADD button
+.text-button:hover {
+  background-color: rgb(210, 146, 253);
+}
+
+//----- LISTS -----//
+
+
+// list 1 - What to READ
 .reading {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border: 2px solid blue;
-  height: 50%;
+  border: 2px solid #363636;
+  height: 100%;
+  width: 30%;
+  margin: 1em;
+}
+
+// counter to keep track of number of items in the list
+.counter {
+  padding: 0.3em;
+  font-family: 'Mukta', sans-serif;
+  background-color: #ffffff;
 }
 
 .reading-button {
-  height: 50px;
+  height: 70px;
   width: 100%;
-  background-color: #b65fcc;
+  background-color: #9addd7;
+  font-family: 'Mukta', sans-serif;
+  font-weight: bold;
+  font-size: 2em;
+  border: none;
+  outline: none;
 }
 
-.reading-button:hover {
-  background-color: yellow;
-}
-
-.reading-button:hover section.all-items {
-  display: block;
-}
-
-// Items for List 1
+// items inside List 1 - What to READ
 .all-items {
   display: none;
+  width: 100%;
 }
-
 
 .item {
-  border: 10px solid black;
+  border: 5px solid black;
+  padding: 20px;
+  margin: 10px;
 }
 
-
-// List 2
-
+// list 2
 .eating {
   display: flex;
   flex-direction: column;
@@ -76,6 +132,7 @@ body {
   align-items: center;
   border: 2px solid blue;
   height: auto;
+  margin: 1em;
 }
 
 .eating-button {
@@ -85,8 +142,7 @@ body {
 }
 
 
-// List 3
-
+// list 3
 .watching {
   display: flex;
   flex-direction: column;
@@ -94,6 +150,7 @@ body {
   align-items: center;
   border: 2px solid blue;
   height: auto;
+  margin: 1em;
 }
 
 .watching-button {
@@ -102,8 +159,7 @@ body {
   background-color: #62be4f;
 }
 
-// List 4
-
+// list 4
 .buying {
   display: flex;
   flex-direction: column;
@@ -111,6 +167,7 @@ body {
   align-items: center;
   border: 2px solid blue;
   height: auto;
+  margin: 1em;
 }
 
 .buying-button {
