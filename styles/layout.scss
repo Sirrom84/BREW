@@ -1,8 +1,8 @@
 // See: https://sass-lang.com/
 
 /*
-- style content & html elements inside each box
-- add tables for content: checkbox, title, date, edit & fav (optional)
+x style content & html elements inside each box
+x add tables for content: checkbox, title, date, edit & fav (optional)
 - add search bar and user icon (or image) to nav bar
 - separate scss into multiple files
 
@@ -29,6 +29,28 @@ nav {
   position: fixed;
   background-color: white;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .search {
+    font-size: 2rem;
+
+    input {
+      outline: 0;
+      border-width: 0 0 2px;
+      border-color: 3b3b3b;
+    }
+    input:focus {
+      border-color: #EFCDCD;
+    }
+  }
+}
+
+/* user image */
+img {
+  border-radius: 50%;
+  width: 50px;
 }
 
 main {
@@ -63,7 +85,7 @@ main {
   table {
     border-collapse: collapse;
     font-weight: 300;
-    width: 80%;
+    width: 90%;
 
     tr {
       border-bottom: 1pt solid rgba(255, 255, 255, 0.233);
