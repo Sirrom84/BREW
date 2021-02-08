@@ -1,5 +1,14 @@
 // See: https://sass-lang.com/
 
+/*
+- style content & html elements inside each box
+- add tables for content: checkbox, title, date, edit & fav (optional)
+- add search bar and user icon (or image) to nav bar
+- separate scss into multiple files
+
+*/
+
+
 html,
 body {
   height: 100%;
@@ -82,102 +91,3 @@ footer {
     color: grey;
   }
 }
-
-// Lists
-
-// .main_container {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-evenly;
-//   align-items: center;
-//   align-content: center;
-//   border: 3px solid green;
-// }
-
-// // List 1
-
-// .reading {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-around;
-//   align-items: center;
-//   border: 2px solid blue;
-//   height: 50%;
-// }
-
-// .reading-button {
-//   height: 50px;
-//   width: 100%;
-//   background-color: #b65fcc;
-// }
-
-// .reading-button:hover {
-//   background-color: yellow;
-// }
-
-// .reading-button:hover section.all-items {
-//   display: block;
-// }
-
-// // Items for List 1
-// .all-items {
-//   display: none;
-// }
-
-
-// .item {
-//   border: 10px solid black;
-// }
-
-
-// // List 2
-
-// .eating {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-around;
-//   align-items: center;
-//   border: 2px solid blue;
-//   height: auto;
-// }
-
-// .eating-button {
-//   height: 50px;
-//   width: 100px;
-//   background-color: #4fa6be;
-// }
-
-
-// // List 3
-
-// .watching {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-around;
-//   align-items: center;
-//   border: 2px solid blue;
-//   height: auto;
-// }
-
-// .watching-button {
-//   height: 50px;
-//   width: 100px;
-//   background-color: #62be4f;
-// }
-
-// // List 4
-
-// .buying {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-around;
-//   align-items: center;
-//   border: 2px solid blue;
-//   height: auto;
-// }
-
-// .buying-button {
-//   height: 50px;
-//   width: 100px;
-//   background-color: #d87634;
-// }
