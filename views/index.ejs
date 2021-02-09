@@ -3,35 +3,51 @@
 
 <head>
   <title>To Do List</title>
+
+  <!-- Zoom Disabled -->
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
+  <!-- CSS -->
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-  <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+
+  <!-- Ajax with jQuery -->
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
 
-  <!-- Routes for Each Resource-->
+  <!-- External jQuery -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 
+  <!-- Books route -->
   <script type="text/javascript" src="/scripts/app-books.js"></script>
+
+  <!-- Food route -->
   <script type="text/javascript" src="/scripts/app-food.js"></script>
+
+  <!-- Movie route -->
   <script type="text/javascript" src="/scripts/app-movie.js"></script>
+
+  <!-- Product route -->
   <script type="text/javascript" src="/scripts/app-products.js"></script>
 
   <!-- Dayjs for Timestamp -->
   <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
   <script src="https://unpkg.com/dayjs@1.8.21/plugin/relativeTime.js"></script>
 
-  <!-- SORTABLEJS-->
-<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+  <!-- Soratablejs -->
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 
+  <!-- Favicon -->
+  <link rel="icon" href="/styles/favicon.ico" type="image/png">
 </head>
 
 
 <body>
-
   <nav>
     <span>to do:</span>
     <form class="search" name="search" target="#here" method="post">
@@ -42,18 +58,17 @@
       <span class="bubble"> random quote </span>
       <img src="https://i.ibb.co/fY32MY0/andy3.png">
     </div>
-
-
   </nav>
 
   <main>
+
     <!-- BOOKS -->
 
     <article class="reading books-button card" id="read">
 
       <!-- visible card -->
       <h2>Read</h2>
-      <div class="counter">9 books</div>
+      <div class="book-counter"></div>
       <section class="book-items">
 
         <!-- fake table data -->
@@ -94,14 +109,12 @@
 
     </article>
 
-    <!-- List 2 -->
+    <!-- Restaurants -->
 
     <article class="food-button">
-
     <div class="eating card">
       <h2>Eat</h2>
-      <div class="counter">25 restaurants</div>
-
+      <div class="food-counter"></div>
 
       <section class="food-items">
 
@@ -111,12 +124,12 @@
     </div>
   </article>
 
+    <!-- Movies -->
 
-    <!-- List 3 -->
     <article class="movie-button">
     <div class="watching card">
       <h2>Watch</h2>
-      <div class="counter">19 shows & movies</div>
+      <div class="movie-counter"></div>
 
       <section class="movie-items">
 
@@ -126,15 +139,15 @@
     </div>
   </article>
 
-    <!-- List 4 -->
+    <!-- Products -->
+
     <article class="product-button">
     <div class="buying card">
       <h2>Buy</h2>
-      <div class="counter">3 products</div>
+      <div class="product-counter"></div>
       <section class="product-items">
 
         <!-- Items in the list goes here -->
-
 
       </section>
     </div>

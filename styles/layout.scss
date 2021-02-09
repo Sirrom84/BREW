@@ -113,7 +113,10 @@ main {
     font-size: 2rem;
   }
 
-  .counter {
+  .book-counter,
+  .food-counter,
+  .movie-counter,
+  .product-counter {
     text-transform: uppercase;
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.5)
