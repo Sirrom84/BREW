@@ -17,13 +17,15 @@
     "dotenv": "^2.0.0",
     "ejs": "^2.6.2",
     "express": "^4.17.1",
+    "knex": "^0.21.17",
     "morgan": "^1.9.1",
     "node-sass-middleware": "^0.11.0",
     "pg": "^6.4.2",
-    "pg-native": "^3.0.0"
+    "pg-native": "^3.0.0",
+    "sortablejs": "^1.13.0"
   },
   "devDependencies": {
+    "fake-data-generator": "^0.4.2",
     "nodemon": "^1.19.1"
   }
 }
-

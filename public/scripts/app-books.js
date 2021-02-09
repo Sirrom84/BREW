@@ -22,6 +22,10 @@ $(() => {
     })
   });
 
+  //counter for number of items in the box
+  $('.counter').
+  $('table.item').size();
+
 
   // button to display items in a list
   $('.books-button').click(function (event) {
