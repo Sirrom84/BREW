@@ -1,11 +1,70 @@
 --Restaurant table seeds here
 
-INSERT INTO restaurants (user_id, name, date_added, city, address, is_complete)
-VALUES (1, 'Maenam', '2020-01-02', 'Vancouver', '1938 W 4th Ave', true),
-(2, 'Kingyo Izakaya', '2021-02-02', 'Vancouver', '871 Denman St', true),
-(3, 'Golden Paramount Seafood Restaurant', '2019-02-02', 'Richmond',  '8071 Park Rd', false),
-(4, 'Le Cinq', '2019-09-12', 'Paris', '31 Avenue George V', false),
-(4, 'Pujol', '2020-01-02', 'Mexico City', 'Tennyson 133', true),
-(5, 'SantoPalato ', '2019-01-02', 'Roma', 'Pizza Tarquinia', false)
+insert into restaurants (user_id, name, city, date_added, is_complete) values (1, 'Applebees', 'Puncan', '9/11/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (2, 'Arbys', 'Xin’an', '4/21/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (3, 'Maenam', 'Vancouver', '2/21/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (4, 'Kingyo Izakaya', 'Vancouver', '4/28/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (5, 'Golden Paramount Seafood Restaurant', 'Richmond', '2/12/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (6, 'Le Cinq', 'Paris', '1/1/2021', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (7, 'Pujol', 'Mexico City', '6/29/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (8, 'SantoPalato', 'Roma', '8/30/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (9, 'Burger King', 'Lamongan', '2/19/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (10, 'Wings', 'Glotovka', '8/14/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (21, 'Baton Rouge', 'Velké Hoštice', '8/22/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (12, 'Chick-Fil-A', 'Guanzhuang', '12/31/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (13, 'Churchs Chicken', 'Hodkovičky', '4/20/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (14, 'Cora', 'Kunvald', '3/27/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (15, 'Dennys', 'Lynchburg', '5/16/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (1, 'Dominos Pizza', 'Stara Błotnica', '1/19/2021', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (2, 'Costa Coffee', 'Kaiapoi', '2/29/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (3, 'Dairy Queen', 'Pereyaslovskaya', '2/10/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (4, 'Five Guys', 'Kihurio', '3/28/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (5, 'Hooters', 'Mata de São João', '2/9/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (6, 'IHOP', 'Asempapan', '11/29/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (7, 'Harveys', 'Sofiyivka', '3/17/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (8, 'Hard Rock Cafe', 'Campos Novos', '9/5/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (9, 'The Keg', 'Ryczywół', '11/26/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (10, 'Krispy Kreme', 'Mentoro Wetan', '9/24/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (19, 'Juan', 'Otradnyy', '10/13/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (12, 'Little Casesars', 'Almere Haven', '2/11/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (13, 'KFC', 'Peuara', '10/10/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (14, 'Marrybrown', 'Muranovo', '7/1/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (15, 'Nandos', 'Buraen', '10/3/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (16, 'Olive Garden', 'Hekou', '9/25/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (17, 'Panda Express', 'Kose', '10/17/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (18, 'Outback Steakhouse', 'Luoyang', '4/8/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (19, 'Papa Johns Pizza', 'Trondheim', '7/23/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (20, 'Paris Baguette', 'Kalbugan', '8/21/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (21, 'Pizza Hut', 'Eusébio', '12/7/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (23, 'Popeyes', 'Miguelópolis', '12/7/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (12, 'Quiznos', 'Sirghāyā', '11/15/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (5, 'Mercantes', 'Shashi', '7/27/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (23, 'Pizza Express', 'Prakhon Chai', '7/19/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (5, 'Pho Express', 'Nhà Bè', '3/16/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (21, 'Earls', 'Kirkkonummi', '2/27/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (20, 'Tim Hortons', 'Bundoc', '5/15/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (29, 'Danbo', 'Guayabetal', '11/27/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (2, 'Green Leaf', 'Coelho Neto', '7/11/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (4, 'Sushi Mori', 'Owerri', '4/15/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (10, 'Subway', 'Mölnlycke', '1/21/2021', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (23, 'Kurry Up', 'Dorotea', '3/29/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (12, 'Sushi California', 'Lisovi Sorochyntsi', '5/5/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (10, 'Stephos', 'Chaltyr', '10/4/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (3, 'Cactus Club', 'Natakoli', '8/9/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (23, 'Saku', 'Plalar', '5/11/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (22, 'McDonalds', 'Dongxin', '2/27/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (20, 'A&W', 'Opatowiec', '11/30/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (13, 'Coquitlam Grill', 'Kīevka', '11/29/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (9, 'Miku', 'Shalya', '9/27/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (9, 'Blue Water Cafe', 'Buriwutung', '11/19/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (2, 'AnnaLena', 'Krzeszów', '12/8/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (10, 'Forage', 'Kalidawe', '2/3/2021', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (27, 'Le Crocodile', 'Ţammūn', '1/2/2021', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (22, 'The Acorn Restaurant', 'Zlaté Hory', '2/11/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (6, 'Carderos', 'Dubki', '11/12/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (15, 'Nightingale', 'Nyinqug', '10/23/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (21, 'Lupo', 'Itacorubi', '7/1/2020', true);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (27, 'Five Sails Restaurant', 'Taiping', '3/13/2020', false);
+insert into restaurants (user_id, name, city, date_added, is_complete) values (20, 'St Lawrence', 'Zlatni Pyasatsi', '3/26/2020', true);
 
 GRANT SELECT, UPDATE, INSERT, UPDATE on restaurants to labber;
