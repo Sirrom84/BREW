@@ -23,11 +23,11 @@ body {
 }
 
 nav {
-  padding: 2vh;
+  padding: 2vh 3vw;
   font-size: 3rem;
   font-weight: 600;
-  position: fixed;
-  background-color: white;
+  // position: fixed;
+  // background-color: white;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -61,21 +61,29 @@ img:hover {
 }
 
 main {
-  width: 80%;
-  margin: 15vh auto 0;
+  width: 100%;
+  margin: auto;
   padding-left: 10vw;
   display: flex;
   justify-content: flex-end;
-  flex-direction: column;
+  flex-direction: row;
   gap: 2vh;
 }
 
+// .card:hover {
+//   transform: translateY(-20px);
+//   transition: 0.4s ease-out;
+// }
+
 .card {
   padding: 2rem 3rem;
+  width: 100%;
   background: #EFCDCD;
   border-radius: 1.8rem;
   color: #FFF;
   background: linear-gradient(-148deg, var(--light), var(--dark));
+  position: relative;
+  left: 0px;
 
   h2 {
     margin-top: 0;
@@ -147,4 +155,8 @@ footer {
     font-size: 2rem;
     color: grey;
   }
+}
+
+@media and 600 {
+  
 }
