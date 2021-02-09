@@ -32,6 +32,8 @@ $(function()  {
   })
 });
 
+
+
 // button to display items in a list
 $('.reading-button').click(function (event) {
   if ($('.all-items').is(":visible")) {
