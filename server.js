@@ -35,15 +35,42 @@ app.use(express.static("public"));
 // Note: Feel free to replace the example routes below with your own
 const movieRoute = require("./routes/movie-routes");
 const bookRoute = require('./routes/book-routes');
-const productRoute = require('./routes/product-routes');
-const restaurantRoute = require('./routes/restaurant-routes');
+// const productRoute = require('./routes/product-routes');
+// const restaurantRoute = require('./routes/restaurant-routes');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
+
 app.use("/books", bookRoute(db));
 app.use("/movies", movieRoute(db));
-app.use("/products", productRoute(db));
-app.use("/restaurants", restaurantRoute(db));
+
+
+// app.use("/users", usersRoutes(db))
+
+
+// // userRoutes
+// router.use("/:id/resources", (db) => {
+//   // return movies, books, eats, something else
+//   const books = Promise.resolve([2, 3, 4])
+//   const promise2 = Promise.resolve([1, 2, 3])
+//   Promise.all([promise1, promise2]).then(([p1Result, p2Result]) => {
+
+
+//     // p1Result = [2, 3, 4]
+//     // p2Result = [1, 2, 3]
+//     return {
+//       movies: p1Result,
+//       books: p2Result
+//     }
+//   })
+//   .then((data) => res.send(data))
+// })
+
+
+
+
+// app.use("/products", productRoute(db));
+// app.use("/restaurants", restaurantRoute(db));
 // Note: mount other resources here, using the same pattern above
 
 
@@ -51,6 +78,10 @@ app.use("/restaurants", restaurantRoute(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
+  res.render("index");
+});
+
+app.get("/:id", (req, res) => {
   res.render("index");
 });
 

@@ -1,44 +1,53 @@
 $(() => {
+//fetching BOOKS information from the db (currently for user_id: 1)
 
-// function to load the items -- needs work
-function loadBooks () {
+const userURL = window.location.pathname
+const userId = userURL[1];
+
+$(function()  {
   $.ajax({
     method: "GET",
-    url: "/books"
-  }).done((users) => {
-    for (user of users) {
-      $("<div>").text(user.name).appendTo($("body"));
-    }
-  });;
-};
+    url: `/books/${userId}`
+  })
+  .then((result) => {
+    console.log(result.books)
+    renderBookList(result.books);
+  })
+  .catch((err) => {
+    console.log("AJAX ERROR CAUGHT RENDER BOOKS", err);
+  })
+});
 
-  // button to display items in a list
-  $('.reading-button').click(function (event) {
-    if ($('.all-items').is(":visible")) {
-      $('.all-items').slideUp();
-    } else {
-      $('.all-items').slideDown();
-    }
-  });
+//fetching MOVIES information from the db
+$(function()  {
+  $.ajax({
+    method: "GET",
+    url: `/movies/${userId}`
+  })
+  .then((result) => {
+    renderBookList(result.movies);
+  })
+  .catch((err) => {
+    console.log("AJAX ERROR CAUGHT RENDER MOVIES", err);
+  })
+});
 
+// button to display items in a list
+$('.reading-button').click(function (event) {
+  if ($('.all-items').is(":visible")) {
+    $('.all-items').slideUp();
+  } else {
+    $('.all-items').slideDown();
+  }
+});
 
   // function to render items
-  // input: array of objects where each book is a book from the database
-  // this function will take each object from the array and run the generateNewElement function, which will create a new items box for each object
-  function renderBook(items) {
-    $('.all-items').empty();
-
+  function renderBookList(items) {
+    // $('.all-items').empty();
     for (item of items) {
       generateNewElement(item);
     }
   };
-
-
-  // test code for generateNewElement function
-  const obj = {
-    "title": "shrek",
-    "date_added": "April 1"
-  }
 
   // function to create new items and push them into the list
   const generateNewElement = function(obj) {
@@ -48,21 +57,16 @@ function loadBooks () {
     const $markup = `
     <article class="item">
       <header>
-        <h2>${title}</h2>
-      </header>
-
-      <footer>
+        <h2>Title: ${title}</h2>
         <h6>Added: ${dateAdded}</h6>
-      </footer>
-  </article>
+      </header>
+    </article>
     `;
 
     const $item = $('.all-items').prepend($markup);
+    console.log("THIS IS THE ITEM from generate new element:", $item)
     return $item;
-  };
-
-  generateNewElement(obj)
+  }
 
 });
-
 
