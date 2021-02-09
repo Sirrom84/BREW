@@ -12,57 +12,137 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
+
+  <!-- Routes for Each Resource-->
+
+  <script type="text/javascript" src="/scripts/app-books.js"></script>
+  <script type="text/javascript" src="/scripts/app-food.js"></script>
+  <script type="text/javascript" src="/scripts/app-movie.js"></script>
+  <script type="text/javascript" src="/scripts/app-products.js"></script>
+
+  <!-- Dayjs for Timestamp -->
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  <script src="https://unpkg.com/dayjs@1.8.21/plugin/relativeTime.js"></script>
+
 </head>
 
 <body>
 
   <nav>
     <span>to do:</span>
+    <form class="search" name="search" target="#here" method="post">
+      <input name="add-search" type="text" placeholder="Add to the list" /><br />
+      <input type="submit" style="height: 0px; width: 0px; border: none; padding: 0px;" hidefocus="true" />
+  </form>
+    <div>
+      <img src="https://i.ibb.co/fY32MY0/andy3.png">
+    </div>
+
+
   </nav>
 
   <main>
     <!-- BOOKS -->
 
-    <div class="reading reading-button card" id="read">
+    <article class="reading books-button card" id="read">
+
       <!-- visible card -->
       <h2>Read</h2>
       <div class="counter">9 books</div>
-      <section class="all-items">
+      <section class="book-items">
 
+        <!-- fake table data -->
+
+        <!-- <table class="item">
+          <tbody>
+              <tr>
+                  <td><input type="checkbox" name="" value=""></td>
+                  <td><b>Harry Potter and the Philosopher's Stone</b></td>
+                  <td>Author</td>
+                  <td class="date-td">Jan 1 2020</td>
+              </tr>
+          </tbody>
+          <tbody>
+              <tr>
+                <td><input type="checkbox" name="" value=""></td>
+                <td><b>Harry Potter and the Chamber of Secrets</b></td>
+                <td>Author</td>
+                <td class="date-td">Jan 2 2020</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="" value=""></td>
+                <td><b>Harry Potter and the Prisoner of Azkaban</b></td>
+                <td>Author</td>
+                <td class="date-td">Jan 4 2020</td>
+              </tr>
+          </tbody>
+          <tfoot>
+              <tr>
+                <td><input type="checkbox" name="" value=""></td>
+                <td><b>Harry Potter and the Order of the Phoenix</b></td>
+                <td>Author</td>
+                <td class="date-td">Jan 6 2020</td>
+              </tr>
+          </tfoot>
+      </table> -->
       </section>
-    </div>
+
+    </article>
 
     <!-- List 2 -->
+
+    <article class="food-button">
 
     <div class="eating card">
       <h2>Eat</h2>
       <div class="counter">25 restaurants</div>
+
+
+      <section class="food-items">
+
+        <!-- Items in the list goes here -->
+
+      </section>
     </div>
+  </article>
+
 
     <!-- List 3 -->
+    <article class="movie-button">
     <div class="watching card">
       <h2>Watch</h2>
       <div class="counter">19 shows & movies</div>
+
+      <section class="movie-items">
+
+        <!-- Items in the list goes here -->
+
+      </section>
     </div>
+  </article>
 
     <!-- List 4 -->
-
+    <article class="product-button">
     <div class="buying card">
       <h2>Buy</h2>
       <div class="counter">3 products</div>
+      <section class="product-items">
+
+        <!-- Items in the list goes here -->
+
+
+      </section>
     </div>
+  </article>
   </main>
 
   <!-- Footer -->
 
-  <footer>
+  <!-- <footer>
     <div class="icon-cont">
       <i class="uil uil-plus"></i>
     </div>
-  </footer>
-
+  </footer> -->
 
 </body>
-
 </html>

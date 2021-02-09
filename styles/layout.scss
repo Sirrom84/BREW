@@ -1,5 +1,13 @@
 // See: https://sass-lang.com/
 
+/*
+x style content & html elements inside each box
+x add tables for content: checkbox, title, date, edit & fav (optional)
+- add search bar and user icon (or image) to nav bar
+- separate scss into multiple files
+
+*/
+
 html,
 body {
   height: 100%;
@@ -10,40 +18,109 @@ body {
   font-size: 16px;
   font-family: "Poppins", sans-serif;
   color: #3b3b3b;
+  display: flex;
+  flex-direction: column;
 }
 
 nav {
-  padding: 5vh;
+  padding: 2vh 3vw;
   font-size: 3rem;
   font-weight: 600;
+  // position: fixed;
+  // background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .search {
+    font-size: 2rem;
+
+    input {
+      outline: 0;
+      border-width: 0 0 2px;
+      border-color: 3b3b3b;
+    }
+    input:focus {
+      border-color: #EFCDCD;
+    }
+  }
+}
+
+/* user image */
+img {
+  border-radius: 50%;
+  width: 50px;
+  -webkit-transition: -webkit-transform .4s ease-in-out;
+  transition:         transform .4s ease-in-out;
+}
+
+img:hover {
+  -webkit-transform: rotate(10deg);
+          transform: rotate(20deg);
 }
 
 main {
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
+  margin: auto;
   padding-left: 10vw;
   display: flex;
   justify-content: flex-end;
-  flex-direction: column;
+  flex-direction: wrap;
   gap: 2vh;
 }
 
+// .card:hover {
+//   transform: translateY(-20px);
+//   transition: 0.4s ease-out;
+// }
+
 .card {
   padding: 2rem 3rem;
+  width: 100%;
   background: #EFCDCD;
   border-radius: 1.8rem;
   color: #FFF;
   background: linear-gradient(-148deg, var(--light), var(--dark));
+  position: relative;
+  left: 0px;
 
   h2 {
     margin-top: 0;
     font-weight: 400;
+    font-size: 2rem;
   }
 
   .counter {
     text-transform: uppercase;
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.5)
+  }
+
+  table {
+    border-collapse: collapse;
+    font-weight: 300;
+    width: 90%;
+
+    tr {
+      border-bottom: 1pt solid rgba(255, 255, 255, 0.233);
+      height: 5rem;
+
+      td {
+        padding: 1rem;
+        text-align: left;
+      }
+      // .title-id {
+      //   text-align: left;
+      // }
+
+      // .author-td {
+      //   text-align: left;
+      // }
+      // .date-td {
+      //   text-align: right;
+      // }
+    }
   }
 }
 
@@ -55,6 +132,7 @@ main {
 .watching {
   --light: #1A1C1E;
   --dark: #414141;
+
 }
 
 .eating {
@@ -67,6 +145,8 @@ main {
   --dark: #CEB6D9;
 }
 
+
+
 footer {
   display: flex;
   justify-content: center;
@@ -78,101 +158,17 @@ footer {
   }
 }
 
-// Lists
 
-// .main_container {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-evenly;
-//   align-items: center;
-//   align-content: center;
-//   border: 3px solid green;
-// }
-
-// // List 1
-
-// .reading {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-around;
-//   align-items: center;
-//   border: 2px solid blue;
-//   height: 50%;
-// }
-
-// .reading-button {
-//   height: 50px;
-//   width: 100%;
-//   background-color: #b65fcc;
-// }
-
-// .reading-button:hover {
-//   background-color: yellow;
-// }
-
-// .reading-button:hover section.all-items {
-//   display: block;
-// }
-
-// // Items for List 1
-.all-items {
+.book-items {
   display: none;
 }
 
-
-// .item {
-//   border: 10px solid black;
-// }
-
-
-// // List 2
-
-// .eating {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-around;
-//   align-items: center;
-//   border: 2px solid blue;
-//   height: auto;
-// }
-
-// .eating-button {
-//   height: 50px;
-//   width: 100px;
-//   background-color: #4fa6be;
-// }
-
-
-// // List 3
-
-// .watching {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-around;
-//   align-items: center;
-//   border: 2px solid blue;
-//   height: auto;
-// }
-
-// .watching-button {
-//   height: 50px;
-//   width: 100px;
-//   background-color: #62be4f;
-// }
-
-// // List 4
-
-// .buying {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-around;
-//   align-items: center;
-//   border: 2px solid blue;
-//   height: auto;
-// }
-
-// .buying-button {
-//   height: 50px;
-//   width: 100px;
-//   background-color: #d87634;
-// }
+.food-items {
+  display: none;
+}
+.movie-items {
+  display: none;
+}
+.product-items {
+  display: none;
+}

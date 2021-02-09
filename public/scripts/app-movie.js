@@ -1,21 +1,12 @@
 $(() => {
+
+   //-- Plugin for dayjs ---//
+   dayjs.extend(window.dayjs_plugin_relativeTime);
+
 //fetching BOOKS information from the db (currently for user_id: 1)
 
-const userURL = window.location.pathname;
+const userURL = window.location.pathname
 const userId = userURL[1];
-
-$(function()  {
-  $.ajax({
-    method: "GET",
-    url: `/books/${userId}`
-  })
-  .then((result) => {
-    renderBookList(result.books);
-  })
-  .catch((err) => {
-    console.log("AJAX ERROR CAUGHT RENDER BOOKS", err);
-  })
-});
 
 //fetching MOVIES information from the db
 $(function()  {
@@ -31,14 +22,12 @@ $(function()  {
   })
 });
 
-
-
 // button to display items in a list
-$('.reading-button').click(function (event) {
-  if ($('.all-items').is(":visible")) {
-    $('.all-items').slideUp();
+$('.movie-button').click(function (event) {
+  if ($('.movie-items').is(":visible")) {
+    $('.movie-items').slideUp();
   } else {
-    $('.all-items').slideDown();
+    $('.movie-items').slideDown();
   }
 });
 
@@ -53,7 +42,8 @@ $('.reading-button').click(function (event) {
   // function to create new items and push them into the list
   const generateNewElement = function(obj) {
     const title = obj.title;
-    const dateAdded = obj.date_added;
+    const date = new Date(obj.date_added).toISOString();
+    const dateAdded = dayjs(date).fromNow();
     const author = obj.author;
 
     const $markup = `
@@ -62,20 +52,15 @@ $('.reading-button').click(function (event) {
         <tr>
             <td><input type="checkbox" name="" value=""></td>
             <td class="title-td"><b>${title}</b></td>
-            <td class="author-td">${author}</td>
-            <td class="date-td">Added on: ${dateAdded}</td>
+            <td class="date-td">Added: ${dateAdded}</td>
         </tr>
     </tbody>
     <table>
     `;
 
-    const $item = $('.all-items').prepend($markup);
+    const $item = $('.movie-items').prepend($markup);
     console.log("THIS IS THE ITEM from generate new element:", $item)
     return $item;
   }
-
-
-
-
 });
 
