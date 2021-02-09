@@ -1,21 +1,28 @@
 $(() => {
 
-   //-- Plugin for dayjs ---//
-   dayjs.extend(window.dayjs_plugin_relativeTime);
+  //-- Plugin for dayjs ---//
+  dayjs.extend(window.dayjs_plugin_relativeTime);
 
-//fetching BOOKS information from the db (currently for user_id: 1)
+  const userURL = window.location.pathname;
+  const userId = userURL.slice(1);
 
-const userURL = window.location.pathname
-const userId = userURL[1];
-
-//fetching MOVIES information from the db
 $(function()  {
   $.ajax({
     method: "GET",
     url: `/movies/${userId}`
   })
   .then((result) => {
-    renderBookList(result.movies);
+    renderList(result.movies);
+
+    //counter
+    const movieCount = $('.movie-items table.item').length;
+    $('.movie-counter').text(movieCount + " SHOWS & MOVIES");
+    $('.watching').click(() => {
+      if (!movieCount) {
+        $('.movie-counter').effect( "shake" , {times: 3, distance: 10} , 300);
+      }
+    });
+
   })
   .catch((err) => {
     console.log("AJAX ERROR CAUGHT RENDER MOVIES", err);
@@ -23,7 +30,7 @@ $(function()  {
 });
 
 // button to display items in a list
-$('.movie-button').click(function (event) {
+$('.movie-button').click(() => {
   if ($('.movie-items').is(":visible")) {
     $('.movie-items').slideUp();
   } else {
@@ -32,7 +39,7 @@ $('.movie-button').click(function (event) {
 });
 
   // function to render items
-  function renderBookList(items) {
+  const renderList = (items) => {
     // $('.all-items').empty();
     for (item of items) {
       generateNewElement(item);
@@ -40,7 +47,7 @@ $('.movie-button').click(function (event) {
   };
 
   // function to create new items and push them into the list
-  const generateNewElement = function(obj) {
+  const generateNewElement = (obj) => {
     const title = obj.title;
     const date = new Date(obj.date_added).toISOString();
     const dateAdded = dayjs(date).fromNow();

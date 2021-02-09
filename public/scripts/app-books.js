@@ -1,12 +1,10 @@
 $(() => {
 
    //-- Plugin for dayjs ---//
-   dayjs.extend(window.dayjs_plugin_relativeTime);
-
-  //fetching BOOKS information from the db (currently for user_id: 1)
+  dayjs.extend(window.dayjs_plugin_relativeTime);
 
   const userURL = window.location.pathname;
-  const userId = userURL[1];
+  const userId = userURL.slice(1);
 
   $(function()  {
     $.ajax({
@@ -14,21 +12,31 @@ $(() => {
       url: `/books/${userId}`
     })
     .then((result) => {
-      console.log(result.books)
-      renderBookList(result.books);
+      renderList(result.books);
+
+      //counter
+      const bookCount = $('.book-items table.item').length;
+      $('.reading').click(() => {
+        if (!bookCount) {
+          $('.book-counter').effect( "shake", {times: 3, distance: 10} , 300);
+        }
+      });
+
+      if (bookCount === 1) {
+        $('.book-counter').text(bookCount + " BOOK");
+      } else {
+        $('.book-counter').text(bookCount + " BOOKS");
+      }
+
     })
     .catch((err) => {
       console.log("AJAX ERROR CAUGHT RENDER BOOKS", err);
     })
   });
 
-  //counter for number of items in the box
-  $('.counter').
-  $('table.item').size();
-
 
   // button to display items in a list
-  $('.books-button').click(function (event) {
+  $('.books-button').click(() => {
     if ($('.book-items').is(":visible")) {
       $('.book-items').slideUp();
     } else {
@@ -37,7 +45,7 @@ $(() => {
   });
 
     // function to render items
-    function renderBookList(items) {
+    const renderList = (items) => {
       // $('.all-items').empty();
       for (item of items) {
         generateNewElement(item);
@@ -45,7 +53,7 @@ $(() => {
     };
 
     // function to create new items and push them into the list
-    const generateNewElement = function(obj) {
+    const generateNewElement = (obj) => {
       const title = obj.title;
       const date = new Date(obj.date_added).toISOString();
       const dateAdded = dayjs(date).fromNow();
@@ -67,9 +75,5 @@ $(() => {
       const $item = $('.book-items').prepend($markup);
       return $item;
     }
-
-
-
-
   });
 

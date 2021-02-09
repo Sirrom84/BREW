@@ -1,11 +1,9 @@
 $(() => {
    //-- Plugin for dayjs ---//
-   dayjs.extend(window.dayjs_plugin_relativeTime);
+  dayjs.extend(window.dayjs_plugin_relativeTime);
 
-  //fetching BOOKS information from the db (currently for user_id: 1)
-
-  const userURL = window.location.pathname
-  const userId = userURL[1];
+  const userURL = window.location.pathname;
+  const userId = userURL.slice(1);
 
   $(function()  {
     $.ajax({
@@ -13,7 +11,22 @@ $(() => {
       url: `/products/${userId}`
     })
     .then((result) => {
-      renderBookList(result.products);
+      renderList(result.products);
+
+      //counter
+      const itemCount = $('.product-items table.item').length;
+      $('.buying').click(() => {
+        if (!itemCount) {
+          $('.product-counter').effect( "shake", {times: 3, distance: 10} , 300);
+        }
+      });
+
+      if (itemCount === 1) {
+        $('.product-counter').text(itemCount + " ITEM");
+      } else {
+        $('.product-counter').text(itemCount + " ITEMS");
+      }
+
     })
     .catch((err) => {
       console.log("AJAX ERROR CAUGHT RENDER BOOKS", err);
@@ -21,7 +34,7 @@ $(() => {
   });
 
   // button to display items in a list
-  $('.product-button').click(function (event) {
+  $('.product-button').click(() => {
     if ($('.product-items').is(":visible")) {
       $('.product-items').slideUp();
     } else {
@@ -30,15 +43,14 @@ $(() => {
   });
 
     // function to render items
-    function renderBookList(items) {
-      // $('.product-items').empty();
+    const renderList = (items) => {
       for (item of items) {
         generateNewElement(item);
       }
     };
 
     // function to create new items and push them into the list
-    const generateNewElement = function(obj) {
+    const generateNewElement = (obj) => {
       const name = obj.name;
       const date = new Date(obj.date_added).toISOString();
       const dateAdded = dayjs(date).fromNow();
