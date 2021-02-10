@@ -21,7 +21,7 @@
 
     <!-- Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -60,21 +60,17 @@
     <!-- Favicon -->
     <link rel="icon" href="/styles/favicon.ico" type="image/png" />
 
-    <!-- Customized checkboxes -->
-    <script src="/path/to/icheck.min.js"></script>
-    <link href="your-path/flat/red.css" rel="stylesheet">
-    <script src="your-path/jquery.icheck.js"></script>
 
   </head>
 
   <body>
     <nav>
-      <span>To do:</span>
+      <span>Add: </span>
       <form class="search" name="search" target="#here" method="post">
         <input
           name="add-search"
           type="text"
-          placeholder="Add to the list"
+          placeholder=" "
         /><br />
         <input
           type="submit"
@@ -149,12 +145,5 @@
 
 
   <!-- Testing for checkbox customization -->
-  <script>
-    $(document).ready(function(){
-      $('input').iCheck({
-        checkboxClass: 'icheckbox_flat',
-        radioClass: 'iradio_flat'
-      });
-    });
-    </script>
+
 </html>

@@ -43,6 +43,8 @@ main {
 tr {
   border-bottom: 1pt solid rgba(255, 255, 255, 0.233);
   height: 4rem;
+
+
   // padding: 1rem 0.4rem;
 
   // td {
@@ -91,3 +93,13 @@ tr {
 .book-items, .food-items, .movie-items, .product-items {
   display: none;
 }
+
+
+
+.strikeout {
+  text-decoration: line-through;
+}
+
+// input[type=checkbox]:checked + .title-td ~ .b .date.td {
+//   text-decoration: line-through;
+// }

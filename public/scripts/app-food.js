@@ -51,7 +51,7 @@ $(() => {
       <table class="item">
       <tbody>
           <tr class="test">
-              <td><input type="checkbox"><td>
+              <td class="check-td"><input type="checkbox"><td>
               <td class="title-td">
                 <b>${name}</b>
                 <div class="date-td">Added: ${dateAdded}</div>

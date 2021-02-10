@@ -1,22 +1,28 @@
 nav {
-  padding: 4vh 4vw;
+  padding: 3vh 4vw;
   font-size: 3rem;
   font-weight: 600;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: baseline;
+  gap: 1vw;
 
   .search {
     font-size: 2rem;
+    flex-grow: 3;
 
     input {
       outline: 0;
       border-width: 0 0 2px;
-      border-color: 3b3b3b;
-      font-weight: 400;
-      font-size: 1rem;
-      width: 20vw;
+      border-color: #555555;
+      background-color: transparent;
+      font-weight: 200;
+      font-size: 3rem;
+      color: #555555;
+      width: 25vw;
+      height: rem;
     }
     input:focus {
       border-color: #EFCDCD;

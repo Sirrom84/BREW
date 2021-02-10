@@ -49,17 +49,18 @@ $(() => {
     const dateAdded = dayjs(date).fromNow();
 
     const $markup = `
-      <table class="item">
-      <tbody>
-          <tr>
-          <td><input type="checkbox"><td>
-              <td class="title-td">
-                <b>${title}</b>
-                <div class="date-td">Added: ${dateAdded}</div>
-              </td>
-          </tr>
-      </tbody>
-      <table>
+
+    <table class="item">
+    <tbody>
+        <tr>
+            <td class="check-td"><input type="checkbox" class="checkbox"><td>
+            <td class="title-td">
+              <b class="name-b">${title}</b>
+              <div class="date-td">Added: ${dateAdded}</div>
+            </td>
+        </tr>
+    </tbody>
+    <table>
       `;
 
     const $item = $(".book-items").prepend($markup);
