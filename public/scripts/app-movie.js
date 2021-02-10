@@ -35,7 +35,7 @@ const deleteMovie = () => {
     url: `/movies/${userId}/delete`,
   }).then((result) => {
     renderList(result.movies);
-}};
+})};
 
 
 

@@ -42,6 +42,10 @@ $(() => {
     }
   };
 
+// function to render options to read and select into your list
+
+
+
   // function to create new items and push them into the list
   const generateNewElement = (obj) => {
     const title = obj.title;

@@ -1,138 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>To Do List</title>
 
-    <!-- Zoom Disabled -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
-    />
+<head>
+  <title>To Do List</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <!-- Zoom Disabled -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
 
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css"/>
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
 
-    <!-- Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css" />
 
-    <!-- Ajax with jQuery -->
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
 
-    <!-- External jQuery -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+  <!-- Ajax with jQuery -->
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
 
-    <!-- Books route -->
-    <script type="text/javascript" src="/scripts/app-books.js"></script>
+  <!-- External jQuery -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 
-    <!-- Food route -->
-    <script type="text/javascript" src="/scripts/app-food.js"></script>
+  <!-- Books route -->
+  <script type="text/javascript" src="/scripts/app-books.js"></script>
+  <script type="text/javascript" src="/scripts/bookFetch.js"></script>
 
-    <!-- Movie route -->
-    <script type="text/javascript" src="/scripts/app-movie.js"></script>
+  <!-- Food route -->
+  <script type="text/javascript" src="/scripts/app-food.js"></script>
 
-    <!-- Product route -->
-    <script type="text/javascript" src="/scripts/app-products.js"></script>
+  <!-- Movie route -->
+  <script type="text/javascript" src="/scripts/app-movie.js"></script>
 
-    <!-- Toggle Cards -->
-    <script type="text/javascript" src="/scripts/app-click.js"></script>
+  <!-- Product route -->
+  <script type="text/javascript" src="/scripts/app-products.js"></script>
 
-    <!-- Checkbox Ajex -->
-    <script type="text/javascript" src="/scripts/app-checkbox.js"></script>
+  <!-- Toggle Cards -->
+  <script type="text/javascript" src="/scripts/app-click.js"></script>
 
-    <!-- Dayjs for Timestamp -->
-    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-    <script src="https://unpkg.com/dayjs@1.8.21/plugin/relativeTime.js"></script>
+  <!-- Checkbox Ajex -->
+  <script type="text/javascript" src="/scripts/app-checkbox.js"></script>
 
-    <!-- Soratablejs -->
-    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+  <!-- Dayjs for Timestamp -->
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  <script src="https://unpkg.com/dayjs@1.8.21/plugin/relativeTime.js"></script>
 
-    <!-- Favicon -->
-    <link rel="icon" href="/styles/favicon.ico" type="image/png" />
+  <!-- Soratablejs -->
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 
-  </head>
-  <body>
-    <nav>
-      <span>Add: </span>
-      <form class="search" name="search" target="#here" method="post">
-        <input
-          name="add-search"
-          type="text"
-          placeholder=" "
-        /><br />
-        <input
-          type="submit"
-          style="height: 0px; width: 0px; border: none; padding: 0px"
-          hidefocus="true"
-        />
+  <!-- Favicon -->
+  <link rel="icon" href="/styles/favicon.ico" type="image/png" />
+
+</head>
+
+<body>
+  <nav>
+
+    <div id="search" class="#f5f5f5 grey lighten-4 z-depth-5">
+      <form id="myform">
+        <div class="input-field">
+          <input type="search" id="books">
+          <label for="search">Search Books</label>
+        </div>
+        <button class="btn red">Search Books</button>
       </form>
-      <div>
-        <span class="bubble"> random quote </span>
-        <img src="https://i.ibb.co/fY32MY0/andy3.png" />
+    </div>
+
+ <!-- Popup here -->
+    <div class="popup">
+      <div class=close-button>&times;</div>
+      <div id="result" class="result-container">
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <main>
-      <!-- BOOKS -->
+  <main>
+    <!-- BOOKS -->
 
-      <article>
-        <div class="reading card">
-          <!-- visible card -->
-          <h2 class="book">Read</h2>
-          <div class="book-counter"></div>
-          <section class="book-items"></section>
-        </div>
-      </article>
+    <article>
+      <div class="reading card">
+        <!-- visible card -->
+        <h2 class="book">Read</h2>
+        <div class="book-counter"></div>
+        <section class="book-items"></section>
+      </div>
+    </article>
 
-      <!-- Restaurants -->
+    <!-- Restaurants -->
 
-      <article>
-        <div class="eating card">
-          <h2 class="eat">Eat</h2>
-          <div class="food-counter"></div>
+    <article>
+      <div class="eating card">
+        <h2 class="eat">Eat</h2>
+        <div class="food-counter"></div>
 
-          <section class="food-items">
-            <!-- Items in the list goes here -->
-          </section>
-        </div>
-      </article>
+        <section class="food-items">
+          <!-- Items in the list goes here -->
+        </section>
+      </div>
+    </article>
 
-      <!-- Movies -->
+    <!-- Movies -->
 
-      <article>
-        <div class="watching card">
-          <h2 class="watch">Watch</h2>
-          <div class="movie-counter"></div>
-          <section class="movie-items">
-            <!-- Items in the list goes here -->
-          </section>
-        </div>
-      </article>
+    <article>
+      <div class="watching card">
+        <h2 class="watch">Watch</h2>
+        <div class="movie-counter"></div>
+        <section class="movie-items">
+          <!-- Items in the list goes here -->
+        </section>
+      </div>
+    </article>
 
-      <!-- Products -->
+    <!-- Products -->
 
-      <article>
-        <div class="buying card">
-          <h2 class="buy">Buy</h2>
-          <div class="product-counter"></div>
-          <section class="product-items">
-            <!-- Items in the list goes here -->
-          </section>
-        </div>
-      </article>
-    </main>
+    <article>
+      <div class="buying card">
+        <h2 class="buy">Buy</h2>
+        <div class="product-counter"></div>
+        <section class="product-items">
+          <!-- Items in the list goes here -->
+        </section>
+      </div>
+    </article>
+  </main>
 
-    <!-- Footer -->
-  </body>
-  <!-- Testing for checkbox customization -->
+  <!-- Footer -->
+</body>
+<!-- Testing for checkbox customization -->
+
 </html>
