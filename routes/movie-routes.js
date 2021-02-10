@@ -26,8 +26,7 @@ module.exports = (db) => {
     const userId = req.params.id;
     const itemId = req.body["itemId"];
     const values = [userId, itemId];
-    console.log("This is req.body:", req.body)
-    console.log("These are our values", values);
+
     db.query(`
     DELETE FROM movies
     WHERE user_id = $1

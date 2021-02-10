@@ -47,17 +47,23 @@ $(() => {
     const title = obj.title;
     const date = new Date(obj.date_added).toISOString();
     const dateAdded = dayjs(date).fromNow();
+    const bookId = obj.id;
 
     const $markup = `
 
-    <table class="item">
+    <table class="item" data-type="books" data-itemId="${bookId}">
     <div>
         <tr>
-            <td class="check-td"><input type="checkbox" class="checkbox"><td>
+            <td class="check-td"><input type="checkbox" class="checkbox">
+            </td>
+
             <td class="title-td">
               <b class="name-b">${title}</b>
               <div class="date-td">Added: ${dateAdded}</div>
             </td>
+
+            <td><button class="btn btn-outline-danger delete">Delete</button></td>
+
         </tr>
     </div>
     <table>

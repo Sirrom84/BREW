@@ -30,23 +30,6 @@ const getMovies = () => {
 
 getMovies();
 
-$(document).on("click", ".delete", function(event) {
-
-  const $item = $(event.target).parent('table.item');
-  const data = {
-    category: $item.attr('data-type'),
-    itemId: $item.attr('data-itemId')
-  }
-  console.log("THIS IS THE DATA:", data)
-
-  $.post(`/movies/${userId}/delete`, data)
-  .then((result) => {
-    renderList(result.movies);
-  })
-  .catch((err) => {
-    console.log("AJAX ERROR CAUGHT RENDER MOVIES", err);
-  })
-});
 
   // function to render items
   const renderList = (items) => {
