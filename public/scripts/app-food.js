@@ -33,16 +33,6 @@ $(() => {
     })
   });
 
-
-  // button to display items in a list
-  $('.food-button').click(() => {
-    if ($('.food-items').is(":visible")) {
-      $('.food-items').slideUp();
-    } else {
-      $('.food-items').slideDown();
-    }
-  });
-
     // function to render items
     const renderList = (items) => {
       // $('.food-items').empty();
@@ -56,23 +46,22 @@ $(() => {
       const name = obj.name;
       const date = new Date(obj.date_added).toISOString();
       const dateAdded = dayjs(date).fromNow();
-      const city = obj.city
+
       const $markup = `
       <table class="item">
       <tbody>
-          <tr>
-              <td><input type="checkbox" name="" value=""></td>
-              <td class="name-td"><b>${name}</b></td>
-              <td class="city">City: ${city}</td>
-              <td class="date-td">Added: ${dateAdded}</td>
-
+          <tr class="test">
+              <td><input type="checkbox"><td>
+              <td class="title-td">
+                <b>${name}</b>
+                <div class="date-td">Added: ${dateAdded}</div>
+              </td>
           </tr>
       </tbody>
       <table>
       `;
 
       const $item = $('.food-items').prepend($markup);
-      console.log("THIS IS THE ITEM from generate new element:", $item)
       return $item;
     }
   });

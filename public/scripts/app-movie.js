@@ -29,15 +29,6 @@ $(function()  {
   })
 });
 
-// button to display items in a list
-$('.movie-button').click(() => {
-  if ($('.movie-items').is(":visible")) {
-    $('.movie-items').slideUp();
-  } else {
-    $('.movie-items').slideDown();
-  }
-});
-
   // function to render items
   const renderList = (items) => {
     // $('.all-items').empty();
@@ -51,22 +42,23 @@ $('.movie-button').click(() => {
     const title = obj.title;
     const date = new Date(obj.date_added).toISOString();
     const dateAdded = dayjs(date).fromNow();
-    const author = obj.author;
+    const author = obj.author
 
     const $markup = `
     <table class="item">
     <tbody>
         <tr>
-            <td><input type="checkbox" name="" value=""></td>
-            <td class="title-td"><b>${title}</b></td>
-            <td class="date-td">Added: ${dateAdded}</td>
+            <td class="check-td"><input type="checkbox"><td>
+            <td class="title-td">
+              <b>${title}</b>
+              <div class="date-td">Added: ${dateAdded}</div>
+            </td>
         </tr>
     </tbody>
     <table>
     `;
 
     const $item = $('.movie-items').prepend($markup);
-    console.log("THIS IS THE ITEM from generate new element:", $item)
     return $item;
   }
 });
