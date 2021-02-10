@@ -51,7 +51,7 @@ $(() => {
 
     const $markup = `
     <table class="item">
-    <tbody>
+    <div>
         <tr>
             <td class="check-td"><input type="checkbox" class="checkbox"><td>
             <td class="title-td">
@@ -59,23 +59,14 @@ $(() => {
               <div class="date-td">Added: ${dateAdded}</div>
             </td>
         </tr>
-    </tbody>
+    </div>
     <table>
       `;
+
+
+
 
     const $item = $(".product-items").prepend($markup);
     return $item;
   };
 });
-
-
-/*    <table class="item">
-<tbody>
-<tr>
-    <td><input type="checkbox" class="checkbox" name="" value=""></td>
-    <td class="title-td"><b>${name}</b></td>
-    <td class="date-td">Added: ${dateAdded}</td>
-</tr>
-</tbody>
-<table>
-  */

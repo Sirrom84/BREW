@@ -13,7 +13,6 @@ main {
   color: #FFF;
   background: linear-gradient(-148deg, var(--light), var(--dark));
   position: relative;
-  left: 0px;
 
   h2 {
     margin-top: 0;
@@ -30,44 +29,41 @@ main {
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.589)
   }
-
-  table {
-    border-collapse: collapse;
-    font-size: 0.9rem;
-    font-weight: 400;
-    width: 100%;
-    border-spacing: 10px;
-  }
 }
-
-tr {
-  border-bottom: 1pt solid rgba(255, 255, 255, 0.233);
-  height: 4rem;
-
-
-  // padding: 1rem 0.4rem;
-
-  // td {
-
-  //   // .check-td {
-  //   //   text-align: left;
-  //   // }
-  // }
-}
-
-.date-td {
-  color: rgba(255, 255, 255, 0.589);
-  text-align: left;
-}
-// line across text
-// .title-td {
-//   text-decoration: line-through;
-// }
 
 .card:hover {
   transform: translateY(-20px);
   transition: 0.4s ease-out;
 }
+
+table {
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  font-weight: 400;
+  width: 100%;
+  border-spacing: 10px;
+}
+
+tr {
+  border-bottom: 1pt solid rgba(255, 255, 255, 0.233);
+  height: 4rem;
+  padding: 0;
+}
+
+.date-td {
+  color: rgba(255, 255, 255, 0.589);
+  text-align: left;
+  font-size: 0.8rem;
+}
+
+.title-td {
+  text-align: left;
+}
+
+// line across text
+// .title-td {
+//   text-decoration: line-through;
+// }
 
 // each list
 .reading {
@@ -94,12 +90,12 @@ tr {
   display: none;
 }
 
-
-
 .strikeout {
   text-decoration: line-through;
 }
 
-// input[type=checkbox]:checked + .title-td ~ .b .date.td {
-//   text-decoration: line-through;
-// }
+input[type=checkbox]{
+  cursor: pointer;
+  width: 1.3em;
+  height: 1.3em;
+}

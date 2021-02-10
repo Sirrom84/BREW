@@ -9,6 +9,8 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
+
+  //display books for a specific user
   router.get("/:id", (req, res) => {
     db.query(`
     SELECT *
@@ -26,7 +28,7 @@ module.exports = (db) => {
       });
   });
 
+
   return router;
+
 };
-
-

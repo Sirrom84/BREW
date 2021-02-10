@@ -51,7 +51,7 @@ $(() => {
     const $markup = `
 
     <table class="item">
-    <tbody>
+    <div>
         <tr>
             <td class="check-td"><input type="checkbox" class="checkbox"><td>
             <td class="title-td">
@@ -59,7 +59,7 @@ $(() => {
               <div class="date-td">Added: ${dateAdded}</div>
             </td>
         </tr>
-    </tbody>
+    </div>
     <table>
       `;
 
