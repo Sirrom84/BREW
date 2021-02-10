@@ -1,0 +1,58 @@
+.popup {
+  font-size: 1rem;
+  font-weight: 300;
+  position: relative;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 1vw;
+  margin: 0 auto;
+  border-radius: 1.8rem;
+  // visibility: hidden;
+  z-index: 9999;
+  overflow: auto;
+}
+
+.result.container {
+  font-size: 1.2rem;
+  font-weight: 300;
+  border: 2px solid grey;
+  height: 400px;
+  flex: 0 1 auto;
+  overflow: auto;
+}
+
+#result {
+  padding: 1rem;
+}
+
+#dynamic {
+  height: 300px;
+  width: 250px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+#imgbutton {
+  font-size: 1.5rem;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+}
+
+.popup-title {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.popup-author {
+  font-size: 1rem;
+  font-weight: 400;
+}

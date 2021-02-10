@@ -16,7 +16,7 @@ $.get("https://www.googleapis.com/books/v1/volumes?q=" + search + "+intitle",fun
 
       title=$('<h3 class="popup-title">' + response.items[i].volumeInfo.title + '</h3>');
       author=$('<h3 class="popup-author"> By: ' + response.items[i].volumeInfo.authors + '</h3>');
-      img = $('<img class="aligning card z-depth-5" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button id="imagebutton" class="info aligning">More info</button></a><hr>');
+      img = $('<img class="aligning card z-depth-5" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button id="imagebutton" class="info aligning">More info</button></a><hr class="separator">');
       url= response.items[i].volumeInfo.imageLinks.thumbnail;
       img.attr('src', url);
       title.appendTo('#result');
