@@ -76,7 +76,7 @@ img:hover {
   border: 2px black solid;
   font-size: 1rem;
   font-weight: 300;
-  padding: 4vw;
+  padding: 1vw;
   margin: 0 auto;
   // visibility: hidden;
 }
@@ -102,3 +102,6 @@ h5 {
   font-size: 1.5rem;
 }
 
+button {
+  display: none;
+}
