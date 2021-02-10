@@ -23,24 +23,25 @@ module.exports = (db) => {
 
   //post request to delete
   router.post("/:id/delete", (req,res) => {
-    const values = [req.params.id, req.body.movie-id]
-    console.log("VALUES OF REQ.BODY:", values)
+    const userId = req.params.id;
+    const itemId = req.body["itemId"];
+    const values = [userId, itemId];
+    console.log("This is req.body:", req.body)
+    console.log("These are our values", values);
+    db.query(`
+    DELETE FROM movies
+    WHERE user_id = $1
+    AND id = $2;`, values)
+      .then(data => {
+        const movies = data.rows;
+        res.json({ movies });
+        })
+      .catch(err => {
+        res
+      .status(500)
+      .json({ error: err.message});
+    });
   });
 
   return router;
 };
-
-// db.query(`
-// DELETE FROM movies
-// WHERE user_id = $1
-// AND book_id = $2
-// `, values)
-// .then(data => {
-//   const movies = data.rows;
-//   res.json({ movies });
-// })
-// .catch(err => {
-//   res
-//     .status(500)
-//     .json({ error: err.message});
-// });
