@@ -15,7 +15,7 @@ let yelpREST = axios.create({
 
 
 module.exports = (db) => {
-
+//put this inside of this routing to work around axios
   router.get("/yelp", (req, res) => {
 //will need to figure this out right now /yelp is showing us the json object for kyoto Edmonton
     yelpREST("/businesses/search", {
@@ -37,7 +37,7 @@ module.exports = (db) => {
         // console.log("Name: ", b.name, "Adress: ", b.location.display_address[0,1], "Phone: ", b.display_phone)
       })
 
-      res.end(JSON.stringify(array));
+      res.send(JSON.stringify(array));
 
     }).catch((error) => {
       console.log("HERES AN ERROR: ",error);

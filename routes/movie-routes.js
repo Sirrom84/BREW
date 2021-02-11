@@ -4,7 +4,9 @@ const router  = express.Router();
 // Get request to movies from Home Page --> gets the list of movies based on the user_id.
 
 module.exports = (db) => {
+
   router.get("/:id", (req, res) => {
+
     db.query(`
     SELECT *
     FROM movies
