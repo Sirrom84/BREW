@@ -61,7 +61,7 @@ module.exports = (db) => {
 
     db.query(editItem, deleteValues)
       .then(data => {
-
+        console.log("this works:", data)
       })
       .catch(err => {
           console.log(err)

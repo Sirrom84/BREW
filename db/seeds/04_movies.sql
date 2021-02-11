@@ -102,3 +102,5 @@ insert into movies (user_id, name, date_added) values (19, 'Waking Sleeping Beau
 insert into movies (user_id, name, date_added) values (10, 'Mifune''s Last Song (Mifunes sidste sang)', '12/3/2020');
 
 GRANT SELECT, UPDATE, INSERT, UPDATE on movies to labber;
+GRANT USAGE, SELECT ON SEQUENCE movies to labber;
+GRANT ALL PRIVILEGES ON TABLE movies to labber;

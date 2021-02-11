@@ -40,3 +40,5 @@ insert into products (user_id, name, date_added, is_complete) values (1, 'Medica
 insert into products (user_id, name, date_added, is_complete) values (29, 'Lipstick', '11/2/2020', false);
 
 GRANT SELECT, UPDATE, INSERT, UPDATE on products to labber;
+GRANT USAGE, SELECT ON SEQUENCE products to labber;
+GRANT ALL PRIVILEGES ON TABLE products to labber;

@@ -104,4 +104,5 @@ insert into books (user_id, name, author, date_added, is_complete) values (29, '
 insert into books (user_id, name, author, date_added, is_complete) values (28, 'Streamlined analyzing architecture', 'Heath Almon', '5/28/2020', false);
 
 GRANT SELECT, UPDATE, INSERT, UPDATE on books to labber;
-GRANT ALL PRIVILEGES ON TABLE books TO labber;
+GRANT USAGE, SELECT ON SEQUENCE books to labber;
+GRANT ALL PRIVILEGES ON TABLE books to labber;

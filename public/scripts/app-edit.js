@@ -22,12 +22,15 @@ $(() => {
     // if reading clicked , delete the item from original table
     $(".reading").click(() => {
 
+      $itemToEdit.remove();
+      console.log("DELETING item FROM list!!!!!")
       $('.bubble').slideUp();
 
       $.post(`/books/${userId}/edit`, data)
         .then(() => {
-          $itemToEdit.remove();
+          console.log("Adding new item to list!!!!!")
           $('section.book-items').add($itemToEdit);
+          return false;
         })
         .catch(err => {
           console.log(err)
@@ -38,13 +41,13 @@ $(() => {
 
       // if eating clicked
       $(".eating").click(() => {
-
+        $itemToEdit.remove();
         $('.bubble').slideUp();
 
         $.post(`/restaurants/${userId}/edit`, data)
           .then(() => {
-            $itemToEdit.remove();
-            // $('section.food-items').add($itemToEdit);
+            $('section.food-items').add($itemToEdit);
+            return false;
           })
           .catch(err => {
             console.log(err)

@@ -82,15 +82,3 @@ module.exports = (db) => {
         return  router;
 
       };
-
-
-    //   db.query(editItem, deleteValues)
-    //   .then(data => {
-
-    //   })
-    //   .catch(err => {
-    //       console.log(err)
-    //     });
-
-
-    // const addItem = `
