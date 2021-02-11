@@ -10,7 +10,7 @@ nav {
   gap: 1vw;
 
   .search {
-    font-size: 2rem;
+    font-size: 1.8rem;
     flex-grow: 3;
 
     input {
@@ -25,7 +25,7 @@ nav {
       height: rem;
     }
     input:focus {
-      border-color: #EFCDCD;
+      border-color: #5ab9bd;
     }
   }
 }
@@ -67,38 +67,3 @@ img:hover {
   right: -17px;
   top: 21px;
 }
-
-.popup {
-  position: relative;
-  display: inline-block;
-  width: 40%;
-  background-color: #CFFFFF;
-  border: 2px black solid;
-  font-size: 1rem;
-  font-weight: 300;
-  padding: 4vw;
-  margin: 0 auto;
-
-}
-
-
-.result.container {
-  font-size: 1.2rem;
-  font-weight: 300;
-  border: 2px solid grey;
-  height: 400px;
-}
-
-#dynamic {
-  height: 300px;
-  width: 250px;
-}
-
-h5 {
-  font-size: 1.5rem;
-}
-
-#imgbutton {
-  font-size: 1.5rem;
-}
-
