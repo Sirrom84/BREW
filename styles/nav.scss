@@ -23,6 +23,7 @@ nav {
       color: #555555;
       width: 25vw;
       height: rem;
+
     }
     input:focus {
       border-color: #5ab9bd;
@@ -31,14 +32,14 @@ nav {
 }
 
 /* user image */
-img {
+.userimg {
   border-radius: 50%;
   width: 50px;
   -webkit-transition: -webkit-transform .4s ease-in-out;
   transition:         transform .4s ease-in-out;
 }
 
-img:hover {
+.userimg:hover {
   -webkit-transform: rotate(10deg);
           transform: rotate(20deg);
 }

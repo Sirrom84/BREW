@@ -20,11 +20,12 @@ body {
   display: flex;
   flex-direction: column;
   background: linear-gradient(170deg, #fdfbfb, #DFF6F6 80%) no-repeat;
+  overflow: auto;
 }
 
 @media only screen and (max-width: 950px) {
   html, body {
-    overflow: auto;
+
 
   }
 

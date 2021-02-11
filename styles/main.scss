@@ -55,7 +55,8 @@ tr {
 }
 
 .date-td {
-  color: rgba(255, 255, 255, 0.589);
+  color: inherit;
+  // color: rgba(255, 255, 255, 0.589);
   text-align: left;
   font-size: 0.8rem;
 }
@@ -114,6 +115,7 @@ input[type=checkbox]{
     transition: none;
   }
 }
+<<<<<<< HEAD
 
 #imagebutton {
 
@@ -122,3 +124,5 @@ input[type=checkbox]{
 
 
 
+=======
+>>>>>>> f91353658ac5d81e712cade7935c23a98191bdc2

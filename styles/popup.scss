@@ -1,52 +1,79 @@
 .popup {
   font-size: 1rem;
   font-weight: 300;
-  position: relative;
-  width: 40%;
-  display: flex;
-  flex-direction: column;
+  position: fixed;
+  top: 15%;
+  left: 25%;
   background-color: #ffffff;
   padding: 1vw;
   margin: 0 auto;
   border-radius: 1.8rem;
-  visibility: hidden;
   z-index: 9999;
   overflow: auto;
+  width: 50%;
+  margin: 0 auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
-.popup.active {
-  visibility: visible;
-}
-
-.result.container {
-  font-size: 1.2rem;
-  font-weight: 300;
-  border: 2px solid grey;
-  height: 400px;
-  flex: 0 1 auto;
-  overflow: auto;
-}
-
-.result.container.active {
-  visibility: visible;
+.close {
+  background-color: transparent;
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  font-size: 3rem;
+  line-height: 30px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
 }
 
 #result {
-  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  min-height: 20vh;
+  max-height: 70vh;
+
+  max-width: 50vw;
+  min-width: 10vw;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 3rem;
+
+
+  // padding: 0 3rem;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
 }
 
-#dynamic {
-  height: 300px;
-  width: 250px;
+address {
+  padding-bottom: 1rem;
+}
+
+.books-img {
+  min-height: 10vh;
+  font-size: 1.5rem;
+  border: 2rem solid #ecf3f3;
+  border-radius: 1.3rem;
+}
+
+// hr {
+//   // padding-top: 1rem;
+// }
+
+.imagebutton {
+  font-size: 0.8rem;
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 0;
-}
-
-#imgbutton {
-  font-size: 1.5rem;
+  padding: 1rem 0 0.4rem 0;
 }
 
 button {
@@ -55,13 +82,13 @@ button {
   color: inherit;
 }
 
-.popup-title {
+.search-title {
   font-weight: 600;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
-.popup-author {
-  font-size: 1rem;
+.search-author {
+  font-size: 0.8rem;
   font-weight: 400;
 }
 
