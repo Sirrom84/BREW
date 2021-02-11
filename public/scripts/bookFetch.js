@@ -2,7 +2,7 @@ $(document).ready(function () {
 
   $("#myform").submit(function () {
     let search = $("#book-search").val();
-    $('.popup').addClass("active");
+    $('.popup, .result.container').addClass("active");
 
     if (search === "") {
       alert("Please enter something in the field");
@@ -16,9 +16,9 @@ $(document).ready(function () {
         console.log('HERES MY LOG FOR THE RESPONSE:', response.items);
         for (let i = 0; i < response.items.length; i++) {
 
-          title = $('<h5 class="center-align white-text">' + response.items[i].volumeInfo.title + '</h5>');
-          author = $('<h5 class="center-align white-text"> By:' + response.items[i].volumeInfo.authors + '</h5>');
-          img = $('<img class="aligning card z-depth-5" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button id="imagebutton" class="btn red aligning">get info</button></a>');
+          title = $('<h3 class="center-align white-text search-title">' + response.items[i].volumeInfo.title + '</h3>');
+          author = $('<h3 class="center-align white-text search-author"> By: ' + response.items[i].volumeInfo.authors + '</h3>');
+          img = $('<img class="aligning card z-depth-5" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button id="imagebutton" class="btn red aligning">get info</button></a><hr>');
           url = response.items[i].volumeInfo.imageLinks.thumbnail;
           img.attr('src', url);
           title.appendTo('#result');

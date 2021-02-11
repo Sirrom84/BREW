@@ -2,29 +2,36 @@
   font-size: 1rem;
   font-weight: 300;
   position: relative;
-  width: 40%;
-  display: flex;
-  flex-direction: column;
   background-color: #ffffff;
   padding: 1vw;
   margin: 0 auto;
   border-radius: 1.8rem;
-  visibility: hidden;
   z-index: 9999;
   overflow: auto;
+  width: 50%;
+  visibility: hidden;
+  margin: 0 auto;
 }
 
-.popup.active {
-  visibility: visible;
+.close {
+  align-items: flex-end;
 }
 
 .result.container {
   font-size: 1.2rem;
   font-weight: 300;
-  border: 2px solid grey;
-  height: 400px;
-  flex: 0 1 auto;
   overflow: auto;
+  display: flex;
+  justify-content: center;
+}
+
+#result {
+  max-width: 50%;
+}
+
+.popup.active {
+  visibility: visible;
+  height: 60vh;
 }
 
 .result.container.active {
@@ -41,7 +48,7 @@
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 0;
 }
 
@@ -55,13 +62,13 @@ button {
   color: inherit;
 }
 
-.popup-title {
+.search-title {
   font-weight: 600;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
-.popup-author {
-  font-size: 1rem;
+.search-author {
+  font-size: 0.8rem;
   font-weight: 400;
 }
 
