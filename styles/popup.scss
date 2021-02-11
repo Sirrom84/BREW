@@ -1,7 +1,9 @@
 .popup {
   font-size: 1rem;
   font-weight: 300;
-  position: relative;
+  position: fixed;
+  top: 15%;
+  left: 25%;
   background-color: #ffffff;
   padding: 1vw;
   margin: 0 auto;
@@ -32,14 +34,16 @@
 .result.container {
   font-size: 1.2rem;
   font-weight: 300;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 #result {
   overflow-x: hidden;
   overflow-y: auto;
 
-  min-height: 200px;
-  max-height: 400px;
+  min-height: 20vh;
+  max-height: 70vh;
 }
 
 // .popup.active {

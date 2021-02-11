@@ -3,7 +3,7 @@ $(document).ready(function () {
 
   $("#myform").submit(function () {
     $('.popup').show();
-    $('.main').click(function(){
+    $('body').click(function(){
       $('.popup').hide();
     });
     $('.close').click(function(){
