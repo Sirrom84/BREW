@@ -1,9 +1,7 @@
 -- books table seeds here (Example)
 
-insert into books (title, user_id, author, date_added, is_complete)
-values ('The Winds of Winter', 1, 'Fakie Author', '2021-01-01', false);
-insert into books (title, user_id, author, date_added, is_complete)
-values ('Harry Potter', 1, 'J.K Rowling', '2020-10-10', false)
+insert into books (title, user_id, author, date_added, is_complete) values ('The Winds of Winter', 1, 'Fakie Author', '2021-01-01', false);
+insert into books (title, user_id, author, date_added, is_complete) values ('Harry Potter', 1, 'J.K Rowling', '2020-10-10', false);
 insert into books (user_id, title, author, date_added, is_complete) values (1, 'Customizable neutral moratorium', 'Garwood Davidovic', '4/22/2020', true);
 insert into books (user_id, title, author, date_added, is_complete) values (7, 'Organic zero defect concept', 'Jaimie Ricardon', '2/23/2020', true);
 insert into books (user_id, title, author, date_added, is_complete) values (6, 'Diverse cohesive help-desk', 'Celeste Grindell', '3/2/2020', true);

@@ -29,14 +29,15 @@ $(function()  {
   })
 });
 
-// button to display items in a list
-$('.movie-button').click(() => {
-  if ($('.movie-items').is(":visible")) {
-    $('.movie-items').slideUp();
-  } else {
-    $('.movie-items').slideDown();
-  }
-});
+const deleteMovie = () => {
+  $.ajax({
+    method: 'POST',
+    url: `/movies/${userId}/delete`,
+  }).then((result) => {
+    renderList(result.movies);
+})};
+
+
 
   // function to render items
   const renderList = (items) => {
@@ -49,25 +50,34 @@ $('.movie-button').click(() => {
   // function to create new items and push them into the list
   const generateNewElement = (obj) => {
     const title = obj.title;
+    const userId = obj.user_id;
     const date = new Date(obj.date_added).toISOString();
     const dateAdded = dayjs(date).fromNow();
-    const author = obj.author;
+    const bookId = obj.id;
 
     const $markup = `
     <table class="item">
-    <tbody>
+    <div>
         <tr>
-            <td><input type="checkbox" name="" value=""></td>
-            <td class="title-td"><b>${title}</b></td>
-            <td class="date-td">Added: ${dateAdded}</td>
+            <td class="check-td"><input type="checkbox"><td>
+            <td class="title-td">
+              <b>${title}</b>
+              <div class="date-td">Added: ${dateAdded}</div>
+              <td><form method="POST" action="/edit">
+              <button type="submit" class="btn btn-outline-danger">Edit</button></form></td>
+              <td>
+                <form method="POST" action="/${userId}/delete">
+                <input type="hidden" name="type" value="movie" />
+                <input type="hidden" name="movie-id" value="${bookId}" />
+                  <button type="submit" class="btn btn-outline-danger">Delete</button>
+                </form></td>
+            </td>
         </tr>
-    </tbody>
+    </div>
     <table>
     `;
 
     const $item = $('.movie-items').prepend($markup);
-    console.log("THIS IS THE ITEM from generate new element:", $item)
     return $item;
   }
 });
-

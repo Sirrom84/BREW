@@ -1,12 +1,11 @@
 // See: https://sass-lang.com/
 
-/*
-x style content & html elements inside each box
-x add tables for content: checkbox, title, date, edit & fav (optional)
-- add search bar and user icon (or image) to nav bar
-- separate scss into multiple files
-
-*/
+// on branch: style/front-end
+//to do list:
+// x 1. center, create grid for main 4 boxes
+// 2. connect checkboxes with ajax
+// x 3. fix clicking problem - make click only list (not white space)
+// 4. add edit/delete --> three .. (connect edit and delete to backend) edit -> renaming & moving lists
 
 html,
 body {
@@ -14,182 +13,19 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: #fcfcfc;
+  background-color: #f3f3f3;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
-  color: #3b3b3b;
-}
-
-nav {
-  padding: 2vh 3vw;
-  font-size: 3rem;
-  font-weight: 600;
-  // position: fixed;
-  // background-color: white;
-  width: 100%;
+  color: #555555;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  .search {
-    font-size: 2rem;
-
-    input {
-      outline: 0;
-      border-width: 0 0 2px;
-      border-color: 3b3b3b;
-    }
-    input:focus {
-      border-color: #EFCDCD;
-    }
-  }
+  flex-direction: column;
+  background: linear-gradient(170deg, #fdfbfb, #DFF6F6 80%) no-repeat;
 }
 
-.bubble {
-  font-size: 1rem;
-  position: relative;
-  width: 125px;
-  height: 55px;
-  padding: 0px;
-  background: #CFFFFF;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-}
+@media only screen and (max-width: 950px) {
+  html, body {
+    overflow: auto;
 
-  .bubble:after {
-  position: absolute;
-  border-style: solid;
-  border-width: 6px 0 6px 17px;
-  border-color: transparent #CFFFFF;
-  display: block;
-  width: 0;
-  z-index: 1;
-  right: -17px;
-  top: 21px;
-}
-
-
-/* user image */
-img {
-  border-radius: 50%;
-  width: 50px;
-  -webkit-transition: -webkit-transform .4s ease-in-out;
-  transition:         transform .4s ease-in-out;
-}
-
-img:hover {
-  -webkit-transform: rotate(10deg);
-          transform: rotate(20deg);
-}
-
-main {
-  width: 100%;
-  margin: auto;
-  padding-left: 10vw;
-  display: grid;
-  height: 100vh;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-// .card:hover {
-//   transform: translateY(-20px);
-//   transition: 0.4s ease-out;
-// }
-
-.card {
-  padding: 2rem 3rem;
-  width: 100%;
-  background: #EFCDCD;
-  border-radius: 1.8rem;
-  color: #FFF;
-  background: linear-gradient(-148deg, var(--light), var(--dark));
-  position: relative;
-  left: 0px;
-
-  h2 {
-    margin-top: 0;
-    font-weight: 400;
-    font-size: 2rem;
   }
 
-  .book-counter,
-  .food-counter,
-  .movie-counter,
-  .product-counter {
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.5)
-  }
-
-  table {
-    border-collapse: collapse;
-    font-weight: 300;
-    width: 90%;
-
-    tr {
-      border-bottom: 1pt solid rgba(255, 255, 255, 0.233);
-      height: 5rem;
-
-      td {
-        padding: 1rem;
-        text-align: left;
-      }
-      // .title-id {
-      //   text-align: left;
-      // }
-
-      // .author-td {
-      //   text-align: left;
-      // }
-      // .date-td {
-      //   text-align: right;
-      // }
-    }
-  }
-}
-
-.reading {
-  --light: #EFCDCD;
-  --dark: #E5A9BB;
-}
-
-.watching {
-  --light: #1A1C1E;
-  --dark: #414141;
-}
-
-.eating {
-  --light:#94D3E4;
-  --dark: #A2C8EC;
-}
-
-.buying {
-  --light:#EDDEF6;
-  --dark: #CEB6D9;
-}
-
-// footer {
-//   display: flex;
-//   justify-content: center;
-//   padding-top: 5vh;
-
-//   i {
-//     font-size: 2rem;
-//     color: grey;
-//   }
-// }
-
-.book-items {
-  display: none;
-}
-
-.food-items {
-  display: none;
-}
-.movie-items {
-  display: none;
-}
-.product-items {
-  display: none;
 }

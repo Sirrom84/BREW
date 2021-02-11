@@ -1,0 +1,116 @@
+main {
+  width: 92%;
+  margin: 10vh auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.9rem;
+}
+
+.card {
+  padding: 2rem 2.5rem;
+  background: #EFCDCD;
+  border-radius: 1rem;
+  color: inherit;
+  // background: linear-gradient(-60deg, var(--light), var(--dark));
+  background: white;
+  position: relative;
+  box-shadow: lightcyan;
+
+  h2 {
+    margin-top: 0;
+    font-weight:600;
+    font-size: 2rem;
+    padding: 0.8em; //added - jinny
+  }
+
+  .book-counter,
+  .food-counter,
+  .movie-counter,
+  .product-counter {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    // color: rgba(255, 255, 255, 0.589);
+    color: inherit;
+    padding-left: 1.5rem;
+  }
+}
+
+.card:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  font-weight: 400;
+  width: 100%;
+  border-spacing: 10px;
+}
+
+tr {
+  border-bottom: 1pt solid rgba(255, 255, 255, 0.233);
+  height: 4rem;
+  padding: 0;
+}
+
+.date-td {
+  color: rgba(255, 255, 255, 0.589);
+  text-align: left;
+  font-size: 0.8rem;
+}
+
+.title-td {
+  text-align: left;
+}
+
+.reading {
+  --light:#B5DDDA;
+  --dark: #A0C4C1;
+}
+
+.eating {
+  --light: #AED5D2;
+  --dark: #557C79;
+}
+
+.watching {
+  --light: #1A1C1E;
+  --dark: #414141;
+}
+
+.buying {
+  --light:#2A362F;
+  --dark: #090908;
+}
+
+.book-items, .food-items, .movie-items, .product-items {
+  display: none;
+}
+
+.strikeout {
+  text-decoration: line-through;
+}
+
+input[type=checkbox]{
+  cursor: pointer;
+  width: 1.3em;
+  height: 1.3em;
+}
+
+@media only screen and (max-width: 1000px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 95%;
+  }
+
+  .card {
+    padding: 1rem 1rem;
+  }
+  .card:hover {
+    transform: none;
+    transition: none;
+  }
+}

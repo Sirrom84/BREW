@@ -5,7 +5,11 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/:id", (req, res) => {
-    db.query(`SELECT * FROM restaurants WHERE user_id = $1;`, [req.params.id])
+    db.query(`
+    SELECT *
+    FROM restaurants
+    WHERE user_id = $1
+    ORDER BY date_added;`, [req.params.id])
       .then(data => {
         const restaurants = data.rows;
         res.json({ restaurants });

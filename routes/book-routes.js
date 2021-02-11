@@ -9,8 +9,14 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
+
+  //display books for a specific user
   router.get("/:id", (req, res) => {
-    db.query(`SELECT * FROM books WHERE user_id = $1;`, [req.params.id])
+    db.query(`
+    SELECT *
+    FROM books
+    WHERE user_id = $1
+    ORDER BY date_added;`, [req.params.id])
       .then(data => {
         const books = data.rows;
         res.json({ books })
@@ -22,7 +28,7 @@ module.exports = (db) => {
       });
   });
 
+
   return router;
+
 };
-
-
