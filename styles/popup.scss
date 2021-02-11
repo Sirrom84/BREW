@@ -9,9 +9,13 @@
   padding: 1vw;
   margin: 0 auto;
   border-radius: 1.8rem;
-  // visibility: hidden;
+  visibility: hidden;
   z-index: 9999;
   overflow: auto;
+}
+
+.popup.active {
+  visibility: visible;
 }
 
 .result.container {
@@ -21,6 +25,10 @@
   height: 400px;
   flex: 0 1 auto;
   overflow: auto;
+}
+
+.result.container.active {
+  visibility: visible;
 }
 
 #result {
@@ -56,3 +64,4 @@ button {
   font-size: 1rem;
   font-weight: 400;
 }
+
