@@ -1,8 +1,15 @@
 $(document).ready(function () {
+  $('.popup, .result.container').hide();
 
   $("#myform").submit(function () {
+    $('.popup').show();
+    $('.main').click(function(){
+      $('.popup').hide();
+    });
+    $('.close').click(function(){
+      $('.popup').hide();
+    })
     let search = $("#book-search").val();
-    $('.popup, .result.container').addClass("active");
 
     if (search === "") {
       alert("Please enter something in the field");
@@ -18,7 +25,7 @@ $(document).ready(function () {
 
           title = $('<h3 class="center-align white-text search-title">' + response.items[i].volumeInfo.title + '</h3>');
           author = $('<h3 class="center-align white-text search-author"> By: ' + response.items[i].volumeInfo.authors + '</h3>');
-          img = $('<img class="aligning card z-depth-5" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button id="imagebutton" class="btn red aligning">get info</button></a><hr>');
+          img = $('<img class="aligning" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button id="imagebutton" class="btn red aligning">get info</button></a><hr>');
           url = response.items[i].volumeInfo.imageLinks.thumbnail;
           img.attr('src', url);
           title.appendTo('#result');
@@ -28,6 +35,7 @@ $(document).ready(function () {
       });
 
     }
+
     return false;
   });
 

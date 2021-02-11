@@ -9,5 +9,4 @@ $("input[type=checkbox]").change(function() {
     $(this).parent().next('.title-td').children().css('text-decoration', 'none');
   }
 });
-
 });
