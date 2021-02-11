@@ -68,3 +68,5 @@ insert into restaurants (user_id, name, city, date_added, is_complete) values (2
 insert into restaurants (user_id, name, city, date_added, is_complete) values (20, 'St Lawrence', 'Zlatni Pyasatsi', '3/26/2020', true);
 
 GRANT SELECT, UPDATE, INSERT, UPDATE on restaurants to labber;
+GRANT USAGE, SELECT ON SEQUENCE restaurants to labber;
+GRANT ALL PRIVILEGES ON TABLE restaurants to labber;

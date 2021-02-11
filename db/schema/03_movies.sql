@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS movies CASCADE;
 CREATE TABLE movies (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  title VARCHAR(255) NOT NULL,
+  name VARCHAR(255) NOT NULL,
   date_added DATE,
   is_complete BOOLEAN
 );

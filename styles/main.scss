@@ -99,3 +99,12 @@ input[type=checkbox]{
   width: 1.3em;
   height: 1.3em;
 }
+
+// delete button
+.delete {
+  height: 20px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: red;
+}

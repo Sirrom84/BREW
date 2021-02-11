@@ -40,8 +40,7 @@ getMovies();
 
   // function to create new items and push them into the list
   const generateNewElement = (obj) => {
-    const title = obj.title;
-    const userId = obj.user_id;
+    const name = obj.name;
     const date = new Date(obj.date_added).toISOString();
     const dateAdded = dayjs(date).fromNow();
     const movieId = obj.id;
@@ -52,13 +51,13 @@ getMovies();
         <tr>
             <td class="check-td"><input type="checkbox"><td>
             <td class="title-td">
-              <b>${title}</b>
+              <b>${name}</b>
               <div class="date-td">Added: ${dateAdded}</div>
               <td><form method="POST" action="/edit">
               <button type="submit" class="btn btn-outline-danger">Edit</button></form>
               </td>
               <td>
-              <button class="btn btn-outline-danger delete">Delete</button>
+              <button class="btn btn-outline-danger delete">X</button>
               </td>
             </td>
         </tr>

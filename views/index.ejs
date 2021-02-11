@@ -50,6 +50,9 @@
     <!-- Delete button -->
     <script type="text/javascript" src="/scripts/app-delete.js"></script>
 
+      <!-- Edit button -->
+      <script type="text/javascript" src="/scripts/app-edit.js"></script>
+
     <!-- Dayjs for Timestamp -->
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="https://unpkg.com/dayjs@1.8.21/plugin/relativeTime.js"></script>
@@ -77,7 +80,7 @@
         />
       </form>
       <div>
-        <span class="bubble"> random quote </span>
+        <span class="bubble">Where do you want to move it?</span>
         <img src="https://i.ibb.co/fY32MY0/andy3.png" />
       </div>
     </nav>
@@ -85,12 +88,14 @@
     <main>
       <!-- BOOKS -->
 
-      <article>
+      <article class="book" data-type="books">
         <div class="reading card">
           <!-- visible card -->
           <h2 class="book">Read</h2>
           <div class="book-counter"></div>
-          <section class="book-items"></section>
+          <section class="book-items">
+
+          </section>
         </div>
       </article>
 

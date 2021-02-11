@@ -10,7 +10,6 @@ $(() => {
       itemId: $item.attr('data-itemId')
     }
 
-
     //post request to movies
     $.post(`/movies/${userId}/delete`, data)
     .then(() => {
@@ -46,7 +45,56 @@ $(() => {
       }
   })
     .catch((err) => {
-      console.log("AJAX ERROR CAUGHT RENDER MOVIES", err);
+      console.log("AJAX ERROR CAUGHT RENDER BOOKS", err);
     })
+
+  //post request to restaurants
+  $.post(`/restaurants/${userId}/delete`, data)
+    .then(() => {
+      $item.remove();
+
+      const resCount = $('.food-items table.item').length;
+      $('.eating').click(() => {
+        if (!resCount) {
+          $('.food-counter').effect( "shake", {times: 3, distance: 10} , 300);
+        }
+      });
+
+      if (resCount === 1) {
+        $('.food-counter').text(resCount + " RESTAURANT");
+      } else {
+        $('.food-counter').text(resCount + " RESTAURANTS");
+      }
+  })
+    .catch((err) => {
+      console.log("AJAX ERROR CAUGHT RENDER RESTAURANTS", err);
+    })
+
+    //post request to products
+  $.post(`/products/${userId}/delete`, data)
+  .then(() => {
+    $item.remove();
+
+    //counter
+    const itemCount = $(".product-items table.item").length;
+    $(".buying").click(() => {
+      if (!itemCount) {
+        $(".product-counter").effect(
+          "shake",
+          { times: 3, distance: 10 },
+          300
+        );
+      }
+    });
+
+    if (itemCount === 1) {
+      $(".product-counter").text(itemCount + " ITEM");
+    } else {
+      $(".product-counter").text(itemCount + " ITEMS");
+    }
+})
+  .catch((err) => {
+    console.log("AJAX ERROR CAUGHT RENDER PRODUCTS", err);
+  })
   });
 });

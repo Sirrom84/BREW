@@ -44,25 +44,25 @@ $(() => {
 
   // function to create new items and push them into the list
   const generateNewElement = (obj) => {
-    const title = obj.title;
+    const name = obj.name;
     const date = new Date(obj.date_added).toISOString();
     const dateAdded = dayjs(date).fromNow();
-    const bookId = obj.id;
+    const itemId = obj.id;
 
     const $markup = `
-
-    <table class="item" data-type="books" data-itemId="${bookId}">
+    <table class="item" data-type="books" data-itemId="${itemId}" data-name="${name}" data-date="${obj.date_added}">
     <div>
         <tr>
             <td class="check-td"><input type="checkbox" class="checkbox">
             </td>
 
             <td class="title-td">
-              <b class="name-b">${title}</b>
+              <b class="name-b">${name}</b>
               <div class="date-td">Added: ${dateAdded}</div>
             </td>
 
-            <td><button class="btn btn-outline-danger delete">Delete</button></td>
+            <td><button class="btn btn-outline-danger edit"></button>Edit</td>
+            <td><button class="btn btn-outline-danger delete">X</button></td>
 
         </tr>
     </div>

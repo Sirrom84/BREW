@@ -21,5 +21,88 @@ module.exports = (db) => {
       });
   });
 
-  return router;
-};
+  //post request to delete
+  router.post("/:id/delete", (req,res) => {
+    const userId = req.params.id;
+    const itemId = req.body["itemId"];
+    const values = [userId, itemId];
+
+    db.query(`
+    DELETE FROM restaurants
+    WHERE user_id = $1
+    AND id = $2;`, values)
+      .then(data => {
+        const restaurants = data.rows;
+        res.json({ restaurants });
+        })
+      .catch(err => {
+        res
+      .status(500)
+      .json({ error: err.message});
+    });
+  });
+
+  //post request to edit
+  router.post("/:id/edit", (req,res) => {
+    const userId = req.params.id;
+    const itemId = req.body["itemId"];
+    const table = req.body["category"];
+    const name = req.body["name"];
+    const date = req.body["date"];
+    const deleteValues = [userId, itemId]
+    const addValues = [userId, name, date];
+    console.log("Thses are my values from RES:", deleteValues)
+    console.log("Thses are my values from RES:", addValues)
+
+    const editItem = `
+    DELETE FROM restaurants
+    WHERE user_id = $1
+    AND id = $2;`
+
+    db.query(editItem, deleteValues)
+      .then(data => {
+
+      })
+      .catch(err => {
+          console.log(err)
+        });
+
+    const addItem = `
+    INSERT INTO ${table} (user_id, name, date_added)
+    VALUES ($1, $2, $3);`
+
+    db.query(addItem, addValues)
+      .then(data => {
+        const restaurants = data.rows;
+        res.json({ restaurants });
+        })
+      .catch(err => {
+          console.log(err)
+          res.status(500).json({ error: err.message});
+        });
+      });
+
+  router.get("/:id/edit", (req,res) => {
+    const userId = req.params.id;
+    const itemId = req.body["itemId"];
+    const table = req.body["category"];
+    const name = req.body["name"];
+    const date = req.body["date"];
+    const deleteValues = [userId, itemId]
+    const addValues = [userId, name, date];
+
+    const newItem = `
+    SELECT * FROM ${table}
+    `
+
+  });
+
+
+
+
+
+
+
+      return router;
+
+    };
