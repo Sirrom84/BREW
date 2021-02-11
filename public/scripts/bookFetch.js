@@ -18,9 +18,9 @@ $(document).ready(function () {
         console.log('HERES MY LOG FOR THE RESPONSE:', response.items);
 
         for (let i = 0; i < response.items.length; i++) {
+          let img = $('<img class="books-img" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button class="imagebutton">Visit Google Books</button></a><br><button class="add-button">Add</button>');
           let title = $('<h3 class="search-title">' + response.items[i].volumeInfo.title + '</h3>');
           let author = $('<address class="search-author"> By: ' + response.items[i].volumeInfo.authors + '</address><hr>');
-          let img = $('<img class="books-img" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button class="imagebutton">Visit Google Books</button></a>');
           let url = response.items[i].volumeInfo.imageLinks.thumbnail;
           img.attr('src', url);
           img.appendTo('#result');
