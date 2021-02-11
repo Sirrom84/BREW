@@ -1,9 +1,50 @@
 const express = require('express');
 const router  = express.Router();
+const axios = require("axios"); //needed for the yelp request.
+let API_KEY = "y3q3LPGT4Z8NTG8gTez1pcmUrWAmZELHkzaLSISaYoq1CZpurxchYdvAph9dI4Itx5Msfpexss8dlUh_4EmfSaEgeNHShGppJqylgKumLnXzFu8bAN7rt7c1VEQjYHYx" // we'll figure out a better way for this
 
-// Get request to restaurants from Home Page --> gets the list of restaurants from the users(user_id)
+// REST
+let yelpREST = axios.create({
+  baseURL: "https://api.yelp.com/v3/",
+  headers: {
+    Authorization: `Bearer ${API_KEY}`,
+    "Content-type": "application/json",
+  },
+})
+
+
 
 module.exports = (db) => {
+
+  router.get("/yelp", (req, res) => {
+//will need to figure this out right now /yelp is showing us the json object for kyoto Edmonton
+    yelpREST("/businesses/search", {
+      params: {
+        location: "Edmonton", //this can be figured out with geotracking
+        term: "kyoto", //user submission coming soon.
+        limit: 20,
+      },
+    }).then(({ data }) => {
+      const results = {};
+      let { businesses } = data;
+      results.businesses = businesses;
+
+      // console.log("BUNIESS LOG:", businesses);
+       const array = [];
+      businesses.forEach((b) => {
+        const obj = {name: b.name, Address: b.location.display_address[0,1], Phone: b.display_phone};
+        array.push(obj)
+        // console.log("Name: ", b.name, "Adress: ", b.location.display_address[0,1], "Phone: ", b.display_phone)
+      })
+
+      res.end(JSON.stringify(array));
+
+    }).catch((error) => {
+      console.log("HERES AN ERROR: ",error);
+    })
+
+  });
+
   router.get("/:id", (req, res) => {
     db.query(`
     SELECT *
@@ -20,6 +61,7 @@ module.exports = (db) => {
           .json({ error: err.message});
       });
   });
+
 
   return router;
 };
