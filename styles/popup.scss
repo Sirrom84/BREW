@@ -11,66 +11,69 @@
   z-index: 9999;
   overflow: auto;
   width: 50%;
-  // visibility: hidden;
   margin: 0 auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .close {
-  background-color: white;
-    cursor: pointer;
-    display: inline-block;
-    font-family: arial;
-    font-weight: bold;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 2rem;
-    line-height: 30px;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-}
-
-.result.container {
-  font-size: 1.2rem;
-  font-weight: 300;
+  background-color: transparent;
+  cursor: pointer;
   display: inline-block;
-  vertical-align: middle;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  font-size: 3rem;
+  line-height: 30px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
 }
 
 #result {
+  font-size: 1.2rem;
+  font-weight: 300;
   overflow-x: hidden;
   overflow-y: auto;
 
   min-height: 20vh;
   max-height: 70vh;
+
+  max-width: 50vw;
+  min-width: 10vw;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 3rem;
+
+
+  // padding: 0 3rem;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
 }
 
-// .popup.active {
-//   visibility: visible;
-//   height: 60vh;
-// }
-
-// .result.container.active {
-//   visibility: visible;
-// }
-
-#result {
-  padding: 1rem;
+address {
+  padding-bottom: 1rem;
 }
 
-#dynamic {
-  height: 300px;
-  width: 250px;
+.books-img {
+  min-height: 10vh;
+  font-size: 1.5rem;
+  border: 2rem solid #ecf3f3;
+  border-radius: 1.3rem;
+}
+
+// hr {
+//   // padding-top: 1rem;
+// }
+
+.imagebutton {
+  font-size: 0.8rem;
 }
 
 h3 {
   font-size: 1rem;
   margin: 0;
-}
-
-#imgbutton {
-  font-size: 1.5rem;
+  padding: 1rem 0 0.4rem 0;
 }
 
 button {

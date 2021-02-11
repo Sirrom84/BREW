@@ -3,7 +3,7 @@ $(document).ready(function () {
 
   $("#myform").submit(function () {
     $('.popup').show();
-    $('body').click(function(){
+    $('nav').click(function(){
       $('.popup').hide();
     });
     $('.close').click(function(){
@@ -21,16 +21,16 @@ $(document).ready(function () {
 
       $.get("https://www.googleapis.com/books/v1/volumes?q=" + search + "+intitle", function (response) {
         console.log('HERES MY LOG FOR THE RESPONSE:', response.items);
-        for (let i = 0; i < response.items.length; i++) {
 
-          title = $('<h3 class="center-align white-text search-title">' + response.items[i].volumeInfo.title + '</h3>');
-          author = $('<h3 class="center-align white-text search-author"> By: ' + response.items[i].volumeInfo.authors + '</h3>');
-          img = $('<img class="aligning" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button id="imagebutton" class="btn red aligning">get info</button></a><hr>');
+        for (let i = 0; i < response.items.length; i++) {
+          title = $('<h3 class="search-title">' + response.items[i].volumeInfo.title + '</h3>');
+          author = $('<address class="search-author"> By: ' + response.items[i].volumeInfo.authors + '</address><hr>');
+          img = $('<img class="books-img" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button class="imagebutton">Visit Google Books</button></a>');
           url = response.items[i].volumeInfo.imageLinks.thumbnail;
           img.attr('src', url);
+          img.appendTo('#result');
           title.appendTo('#result');
           author.appendTo('#result');
-          img.appendTo('#result');
         }
       });
 
