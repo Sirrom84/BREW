@@ -8,15 +8,19 @@ $(() => {
   $(".search-form").submit(() => {
 
     let userSearch = $("#search").val();
-    console.log("This is my book entry:", userSearch);
 
-    $('.popup').show();
-
-    $('.close').click(() => {
-      $('.popup').hide();
-    });
+      if (!userSearch) {
+      $(".error").show();
+      $('.books-items').empty();
+    }
 
     if (userSearch[0] === "R" || userSearch[0] === "r") {
+      $(".error").hide();
+      $('.popup').show();
+
+      $('.close').click(() => {
+        $('.popup').hide();
+      });
 
       let textEntry = userSearch.split(" ");
       const textArr = textEntry.shift();
@@ -58,6 +62,7 @@ $(() => {
               .then(() => {
                 console.log("New Items Created")
                 loadBooks();
+                $("#search").val(' ');
                 location.reload();
               })
               .catch(err => {
@@ -67,7 +72,7 @@ $(() => {
         });
 
       return false;
-    };
+    }
   });
 
 });

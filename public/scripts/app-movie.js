@@ -6,12 +6,12 @@ const loadMovies = () => {
   .then((result) => {
     renderMovieList(result.movies);
 
-     // counter
-  const movieCount = $('.movie-items table.item').length;
-  $('.movie-counter').text(movieCount + " SHOWS & MOVIES");
+     //counter
+  const movieCount = $('.movies-items table.item').length;
+  $('.movies-counter').text(movieCount + " SHOWS & MOVIES");
   $('.watching').click(() => {
   if (!movieCount) {
-    $('.movie-counter').effect( "shake" , {times: 3, distance: 10} , 300);
+    $('.movies-counter').effect( "shake" , {times: 3, distance: 10} , 300);
   }
 });
   })
@@ -47,7 +47,7 @@ const generateMovieElement = (obj) => {
   <table>
   `;
 
-  const $item = $('.movie-items').prepend($markup);
+  const $item = $('.movies-items').prepend($markup);
   return $item;
 };
 

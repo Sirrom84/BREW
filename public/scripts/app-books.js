@@ -10,17 +10,17 @@ const loadBooks = () => {
       renderList(result.books);
 
       //counter
-      const bookCount = $(".book-items table.item").length;
+      const bookCount = $(".books-items table.item").length;
       $(".reading").click(() => {
         if (!bookCount) {
-          $(".book-counter").effect("shake", { times: 3, distance: 10 }, 300);
+          $(".books-counter").effect("shake", { times: 3, distance: 10 }, 300);
         }
       });
 
       if (bookCount === 1) {
-        $(".book-counter").text(bookCount + " BOOK");
+        $(".books-counter").text(bookCount + " BOOK");
       } else {
-        $(".book-counter").text(bookCount + " BOOKS");
+        $(".books-counter").text(bookCount + " BOOKS");
       }
     })
     .catch((err) => {
@@ -55,7 +55,7 @@ const generateNewElement = (obj) => {
   <table>
     `;
 
-  const $item = $(".book-items").prepend($markup);
+  const $item = $(".books-items").prepend($markup);
   return $item;
 };
 

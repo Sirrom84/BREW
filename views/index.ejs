@@ -61,15 +61,16 @@
     <!-- Checkbox Ajex -->
     <script type="text/javascript" src="/scripts/click/app-checkbox.js"></script>
 
-     <!-- Add New item -->
-     <script type="text/javascript" src="/scripts/api-post/bookAdd.js"></script>
+    <!-- Add New item -->
+    <script type="text/javascript" src="/scripts/api-post/bookAdd.js"></script>
+
+    <!-- Sortablejs -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-sortablejs@latest/jquery-sortable.js"></script>
+    <script type="text/javascript" src="/sortable/sortable.js"></script>
 
     <!-- Dayjs for Timestamp -->
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="https://unpkg.com/dayjs@1.8.21/plugin/relativeTime.js"></script>
-
-    <!-- Soratablejs -->
-    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 
     <!-- Favicon -->
     <link rel="icon" href="/styles/favicon.ico" type="image/png" />
@@ -79,16 +80,24 @@
     <nav>
       <span>Add:</span>
       <form class="search-form" name="search" target="#here" method="post">
-
         <input id="search" name="add-search" type="text" placeholder="" />
         <button class="btn red"><i class="uil uil-search"></i></button>
       </form>
 
+      <% if (!user) { %>
+
+        <td id="login-instructions"> Log in to view your lists! <br> (but you can still play with our boxes) </td>
+
+      <% } else { %>
+
       <div>
         <span class="bubble">Click the list you want to move it too!</span>
+        <span class="error">Enter a valid item!</span>
         <img class="userimg" src="https://i.ibb.co/fY32MY0/andy3.png" />
       </div>
 
+
+      <% } %>
 
       <div class="popup">
         <div class="close">&times;</div>
@@ -97,15 +106,14 @@
 
     </nav>
 
-    <main class="main">
+    <main class="main" id="sortable">
 
       <!-- Products -->
-
       <article data-type="4">
         <div class="buying card">
-          <h2 class="buy">Buy</h2>
-          <div class="product-counter"></div>
-          <section class="product-items">
+          <h2 class="label buy">Buy</h2>
+          <div class="products-counter"></div>
+          <section class="products-items item-list">
             <!-- Items in the list goes here -->
           </section>
         </div>
@@ -116,36 +124,33 @@
       <article class="book" data-type="1">
         <div class="reading card">
           <!-- visible card -->
-          <h2 class="book">Read</h2>
-          <div class="book-counter"></div>
-          <section class="book-items"></section>
+          <h2 class="label book">Read</h2>
+          <div class="books-counter"></div>
+          <section class="books-items"></section>
         </div>
       </article>
 
-
-
       <!-- Restaurants -->
-
       <article data-type="3">
         <div class="eating card">
-          <h2 class="eat">Eat</h2>
-          <div class="food-counter"></div>
-          <section class="food-items"></section>
+          <h2 class="label eat">Eat</h2>
+          <div class="foods-counter"></div>
+          <section class="foods-items"></section>
         </div>
       </article>
 
       <article data-type="2">
         <div class="watching card">
-          <h2 class="watch">Watch</h2>
-          <div class="movie-counter"></div>
-          <section class="movie-items">
+          <h2 class="label watch">Watch</h2>
+          <div class="movies-counter"></div>
+          <section class="movies-items">
             <!-- Items in the list goes here -->
           </section>
         </div>
       </article>
 
 
-
+    </ul>
     </main>
 
     <!-- Footer -->

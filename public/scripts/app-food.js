@@ -7,17 +7,17 @@ const loadRestaurants = () => {
       renderFoodList(result.restaurants);
 
       //counter
-      const resCount = $('.food-items table.item').length;
+      const resCount = $('.foods-items table.item').length;
       $('.eating').click(() => {
         if (!resCount) {
-          $('.food-counter').effect( "shake", {times: 3, distance: 10} , 300);
+          $('.foods-counter').effect( "shake", {times: 3, distance: 10} , 300);
         }
       });
 
       if (resCount === 1) {
-        $('.food-counter').text(resCount + " RESTAURANT");
+        $('.foods-counter').text(resCount + " RESTAURANT");
       } else {
-        $('.food-counter').text(resCount + " RESTAURANTS");
+        $('.foods-counter').text(resCount + " RESTAURANTS");
       }
 
     })
@@ -28,7 +28,6 @@ const loadRestaurants = () => {
 
 const renderFoodList = (items) => {
   for (item of items) {
-    console.log("This is the render function")
     generateFoodElement(item);
   }
 };
@@ -55,7 +54,7 @@ const generateFoodElement = (obj) => {
   <table>
   `;
 
-  const $item = $('.food-items').prepend($markup);
+  const $item = $('.foods-items').prepend($markup);
   return $item;
 }
 
@@ -64,7 +63,6 @@ $(() => {
   dayjs.extend(window.dayjs_plugin_relativeTime);
 
   loadRestaurants();
-  console.log("This is the kasjdlskajdlk function")
 
   });
 

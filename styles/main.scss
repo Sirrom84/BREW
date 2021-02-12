@@ -22,10 +22,10 @@ main {
     padding: 0.8em;
   }
 
-  .book-counter,
-  .food-counter,
-  .movie-counter,
-  .product-counter {
+  .books-counter,
+  .foods-counter,
+  .movies-counter,
+  .products-counter {
     text-transform: uppercase;
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.589);
@@ -84,7 +84,7 @@ tr {
   --dark: #CEB6D9;
 }
 
-.book-items, .food-items, .movie-items, .product-items {
+.books-items, .foods-items, .movies-items, .products-items {
   display: none;
 }
 
@@ -114,6 +114,10 @@ tr {
 .yelp-image {
   height: 10rem;
   width: 10rem;
+}
+
+#login-instructions {
+  font-size: 30px;
 }
 
 @media only screen and (max-width: 1000px) {

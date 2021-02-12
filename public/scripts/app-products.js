@@ -5,13 +5,12 @@ const loadProducts = () => {
   })
     .then((result) => {
       renderProductList(result.products);
-      console.log("This is the render")
 
       //counter
-      const itemCount = $(".product-items table.item").length;
+      const itemCount = $(".products-items table.item").length;
       $(".buying").click(() => {
         if (!itemCount) {
-          $(".product-counter").effect(
+          $(".products-counter").effect(
             "shake",
             { times: 3, distance: 10 },
             300
@@ -20,9 +19,9 @@ const loadProducts = () => {
       });
 
       if (itemCount === 1) {
-        $(".product-counter").text(itemCount + " ITEM");
+        $(".products-counter").text(itemCount + " ITEM");
       } else {
-        $(".product-counter").text(itemCount + " ITEMS");
+        $(".products-counter").text(itemCount + " ITEMS");
       }
     })
     .catch((err) => {
@@ -58,8 +57,7 @@ const renderProductList = (items) => {
   <table>
     `;
 
-  console.log("New items generaeted")
-  const $item = $(".product-items").prepend($markup);
+  const $item = $(".products-items").prepend($markup);
   return $item;
 };
 

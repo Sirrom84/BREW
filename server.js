@@ -50,11 +50,19 @@ app.use("/products", productRoutes(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
-  res.render("index");
+  const templateVars = {
+    user: req.params.id
+  }
+
+  return res.render("index", templateVars);
 });
 
 app.get("/:id", (req, res) => {
-  res.render("index");
+  const templateVars = {
+    user: req.params.id
+  }
+
+  return res.render("index", templateVars);
 });
 
 app.listen(PORT, () => {

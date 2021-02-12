@@ -7,16 +7,14 @@ $(() => {
 
   $(".search-form").submit(() => {
     let userSearch = $("#search").val();
-    console.log("This is my movie entry:", userSearch);
-    console.log("This is my first letter:", userSearch[0])
-
-    $('.popup').show();
-
-    $('.close').click(() => {
-      $('.popup').hide();
-    });
 
     if (userSearch[0] === "W" || userSearch[0] === "w") {
+      $(".error").hide();
+      $('.popup').show();
+
+      $('.close').click(() => {
+        $('.popup').hide();
+      });
 
       let textEntry = userSearch.split(" ");
       const textArr = textEntry.shift();
@@ -48,6 +46,7 @@ $(() => {
             .then(() => {
               console.log("New Items Created")
               loadMovies();
+              $("#search").val(' ');
               location.reload();
             })
             .catch(err => {
@@ -57,6 +56,11 @@ $(() => {
       });
 
     return false; //prevent the form from auto submitting
+    } else {
+
+      $(".error").show();
+      location.reload();
+
     }
   })
 });

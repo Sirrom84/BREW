@@ -15,11 +15,11 @@ $(() => {
     .then(() => {
       $item.remove();
 
-      const movieCount = $('.movie-items table.item').length;
-      $('.movie-counter').text(movieCount + " SHOWS & MOVIES");
+      const movieCount = $('.movies-items table.item').length;
+      $('.movies-counter').text(movieCount + " SHOWS & MOVIES");
       $('.watching').click(() => {
       if (!movieCount) {
-        $('.movie-counter').effect( "shake" , {times: 3, distance: 10} , 300);
+        $('.movies-counter').effect( "shake" , {times: 3, distance: 10} , 300);
     }})
   })
     .catch((err) => {
@@ -31,17 +31,17 @@ $(() => {
     .then(() => {
       $item.remove();
 
-      const bookCount = $(".book-items table.item").length;
+      const bookCount = $(".books-items table.item").length;
       $(".reading").click(() => {
         if (!bookCount) {
-          $(".book-counter").effect("shake", { times: 3, distance: 10 }, 300);
+          $(".books-counter").effect("shake", { times: 3, distance: 10 }, 300);
         }
       });
 
       if (bookCount === 1) {
-        $(".book-counter").text(bookCount + " BOOK");
+        $(".books-counter").text(bookCount + " BOOK");
       } else {
-        $(".book-counter").text(bookCount + " BOOKS");
+        $(".books-counter").text(bookCount + " BOOKS");
       }
   })
     .catch((err) => {
@@ -53,17 +53,17 @@ $(() => {
     .then(() => {
       $item.remove();
 
-      const resCount = $('.food-items table.item').length;
+      const resCount = $('.foods-items table.item').length;
       $('.eating').click(() => {
         if (!resCount) {
-          $('.food-counter').effect( "shake", {times: 3, distance: 10} , 300);
+          $('.foods-counter').effect( "shake", {times: 3, distance: 10} , 300);
         }
       });
 
       if (resCount === 1) {
-        $('.food-counter').text(resCount + " RESTAURANT");
+        $('.foods-counter').text(resCount + " RESTAURANT");
       } else {
-        $('.food-counter').text(resCount + " RESTAURANTS");
+        $('.foods-counter').text(resCount + " RESTAURANTS");
       }
   })
     .catch((err) => {
@@ -76,10 +76,10 @@ $(() => {
     $item.remove();
 
     //counter
-    const itemCount = $(".product-items table.item").length;
+    const itemCount = $(".products-items table.item").length;
     $(".buying").click(() => {
       if (!itemCount) {
-        $(".product-counter").effect(
+        $(".products-counter").effect(
           "shake",
           { times: 3, distance: 10 },
           300
@@ -88,9 +88,9 @@ $(() => {
     });
 
     if (itemCount === 1) {
-      $(".product-counter").text(itemCount + " ITEM");
+      $(".products-counter").text(itemCount + " ITEM");
     } else {
-      $(".product-counter").text(itemCount + " ITEMS");
+      $(".products-counter").text(itemCount + " ITEMS");
     }
 })
   .catch((err) => {

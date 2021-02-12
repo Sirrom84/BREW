@@ -7,16 +7,15 @@ $(() => {
 
   $(".search-form").submit(function (event) {
     event.preventDefault();
-
-  $('.popup').show();
-
-    $('.close').click(() => {
-      $('.popup').hide();
-  });
-
     let userSearch = $("#search").val();
 
     if (userSearch[0] === "B" || userSearch[0] === "b") {
+      $(".error").hide();
+      $('.popup').show();
+
+      $('.close').click(() => {
+        $('.popup').hide();
+      });
 
       let textEntry = userSearch.split(" ");
       const textArr = textEntry.shift();
@@ -53,6 +52,7 @@ $(() => {
           .then(() => {
             console.log("New Items Created")
             loadProducts();
+            $("#search").val(' ');
             location.reload();
           })
           .catch(err => {
@@ -62,7 +62,7 @@ $(() => {
     });
 
   return false; //prevent the form from auto submitting
-  };
+  }
   });
 });
 

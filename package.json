@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "fake-data-generator": "^0.4.2",
+    "jquery-sortablejs": "^1.0.1",
     "nodemon": "^1.19.1"
   }
 }

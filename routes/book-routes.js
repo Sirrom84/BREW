@@ -41,7 +41,6 @@ module.exports = (db) => {
     console.log("This is the values to add:", values)
 
     db.query(`
-
     INSERT INTO items (category_id, user_id, name, date_added)
     VALUES (1, $1, $2, $3)`, values)
       .then(data => {
