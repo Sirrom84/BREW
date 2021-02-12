@@ -2,14 +2,14 @@ const express = require('express');
 const router  = express.Router();
 const axios = require("axios");
 const { response } = require('express');
-let API_KEY = "4ECDAD44CCBE407189F07CDEE5AA20DA";
+let API_KEY = "346E54F4250F4D81A4B33E291D6943F9";
 
 module.exports = (db) => {
 //inside of this to route axios /buy is just temp until  we can get the db linked
+
   router.get("/buy/:id", (req,res) => {
     console.log("Thsi is my req.params:", req.params.id);
     // make the http GET request to Rainforest API
-
 
   const userSearch = req.params.id;
   //Request params
@@ -20,15 +20,12 @@ module.exports = (db) => {
   amazon_domain: "amazon.com",
   search_term: userSearch,
   sort_by: "average_review",
-
 };
 
     axios.get('https://api.rainforestapi.com/request', {params})
 
-     .then(response => {
+    .then(response => {
         res.send(response.data.search_results, 0, 2);
-
-
 
       }).catch(error => {
         console.log(error);
@@ -54,12 +51,32 @@ module.exports = (db) => {
       });
   });
 
+  //post request to create new item
+  router.post('/:id/new', (req, res) => {
+    const userId = req.params.id;
+    const name = req.body["name"];
+    const capName =  name.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
+    const date_added = new Date().toISOString().slice(0, 10);
+    const values = [userId, capName, date_added];
+    console.log("This is the values to add:", values)
+
+    db.query(`
+    INSERT INTO items (category_id, user_id, name, date_added)
+    VALUES (4, $1, $2, $3)`, values)
+      .then(data => {
+        const newProducts = data.rows;
+        res.json({ newProducts })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  });
+
   //post request to delete
   router.post("/:id/delete", (req,res) => {
     const userId = req.params.id;
     const itemId = req.body["itemId"];
     const values = [userId, itemId];
-    console.log("Products post request:", values)
 
     db.query(`
     DELETE FROM items
@@ -82,7 +99,7 @@ module.exports = (db) => {
     const itemId = req.body["itemId"];
     const categoryId = req.body["categoryId"]
     const values = [categoryId, userId, itemId]
-    console.log("Thses are my values:", values)
+
 
     const editItem = `
     UPDATE items

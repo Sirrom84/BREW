@@ -38,7 +38,6 @@ $(() => {
         // create new item
         $('.add-button').click((event) => {
 
-
           const data = {
             name: response.Title
           };
