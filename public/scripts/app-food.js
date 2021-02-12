@@ -54,7 +54,6 @@ loadRestaurants();
       <table class="item" data-type="restaurants" data-itemId="${foodId}">
       <div>
           <tr class="test">
-              <td class="check-td"><input type="checkbox"><td>
               <td class="title-td">
                 <b>${name}</b>
                 <div class="date-td">Added: ${dateAdded}</div>

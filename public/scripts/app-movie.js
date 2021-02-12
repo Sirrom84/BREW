@@ -49,7 +49,6 @@ getMovies();
     <table class="item" data-type="movies" data-itemId="${movieId}">
     <div>
         <tr>
-            <td class="check-td"><input type="checkbox"><td>
             <td class="title-td">
               <b>${name}</b>
               <div class="date-td">Added: ${dateAdded}</div>

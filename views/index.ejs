@@ -1,59 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>To Do List</title>
 
-<head>
-  <title>To Do List</title>
+    <!-- Zoom Disabled -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
 
-  <!-- Zoom Disabled -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/popup.css" type="text/css" />
 
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/popup.css" type="text/css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css"/>
 
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700&display=swap"
-    rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!-- Ajax with jQuery -->
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
 
-  <!-- Ajax with jQuery -->
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <!-- External jQuery -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 
-  <!-- External jQuery -->
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <!-- Books route -->
+    <script type="text/javascript" src="/scripts/app-books.js"></script>
 
-  <!-- Books route -->
-  <sript type="text/javascript" src="/scripts/app-books.js">
-    </script>
-    <!-- <script type="text/javascript" src="/scripts/bookFetch.js"></script> -->
+    <script type="text/javascript" src="/scripts/api/bookFetch.js"></script>
 
     <!-- Food route -->
     <script type="text/javascript" src="/scripts/app-food.js"></script>
-    <script type="text/javascript" src="/scripts/restaurantFetch.js"></script>
 
     <!-- Movie route -->
     <script type="text/javascript" src="/scripts/app-movie.js"></script>
-    <!-- <script type="text/javascript" src="/scripts/movieFetch.js"></script> -->
 
     <!-- Product route -->
     <script type="text/javascript" src="/scripts/app-products.js"></script>
-    <!-- <script type="text/javascript" src="/scripts/productFetch.js"></script> -->
 
     <!-- Toggle Cards -->
-    <script type="text/javascript" src="/scripts/app-click.js"></script>
+    <script type="text/javascript" src="/scripts/click/app-click.js"></script>
 
     <!-- Delete button -->
-    <script type="text/javascript" src="/scripts/app-delete.js"></script>
+    <script type="text/javascript" src="/scripts/click/app-delete.js"></script>
 
-      <!-- Edit button -->
-      <script type="text/javascript" src="/scripts/app-edit.js"></script>
+    <!-- Edit button -->
+    <script type="text/javascript" src="/scripts/click/app-edit.js"></script>
+
+    <!-- Checkbox Ajex -->
+    <script type="text/javascript" src="/scripts/click/app-checkbox.js"></script>
 
     <!-- Dayjs for Timestamp -->
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
@@ -64,30 +65,32 @@
 
     <!-- Favicon -->
     <link rel="icon" href="/styles/favicon.ico" type="image/png" />
-
   </head>
   <body>
+
     <nav>
       <span>Add: </span>
-      <form class="search" name="search" target="#here" method="post">
-        <input
-          name="add-search"
-          type="text"
-          placeholder=" "
-        /><br />
-        <input
-          type="submit"
-          style="height: 0px; width: 0px; border: none; padding: 0px"
-          hidefocus="true"
-        />
+      <form class="search-form" name="search" target="#here" method="post">
+
+        <input id="book-search" name="add-search" type="text" placeholder=" " />
+        <button class="btn red"><i class="uil uil-search"></i></button>
+
       </form>
+
       <div>
-        <span class="bubble">Where do you want to move it?</span>
-        <img src="https://i.ibb.co/fY32MY0/andy3.png" />
+        <span class="bubble">Click the list you want to move it too!</span>
+        <img class="userimg" src="https://i.ibb.co/fY32MY0/andy3.png" />
       </div>
+
+
+      <div class="popup">
+        <div class="close">&times;</div>
+        <div id="result" class="result-container"></div>
+      </div>
+
     </nav>
 
-    <main>
+    <main class="main">
       <!-- BOOKS -->
 
       <article class="book" data-type="1">
@@ -95,9 +98,7 @@
           <!-- visible card -->
           <h2 class="book">Read</h2>
           <div class="book-counter"></div>
-          <section class="book-items">
-
-          </section>
+          <section class="book-items"></section>
         </div>
       </article>
 
@@ -141,5 +142,7 @@
 
     <!-- Footer -->
   </body>
+  <!-- Testing for checkbox customization -->
+</html>
   <!-- Testing for checkbox customization -->
 </html>
