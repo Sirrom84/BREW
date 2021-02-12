@@ -6,7 +6,7 @@ $(() => {
   const userURL = window.location.pathname;
   const userId = userURL.slice(1);
 
-$(function()  {
+const getMovies = () => {
   $.ajax({
     method: "GET",
     url: `/movies/${userId}`
@@ -14,34 +14,25 @@ $(function()  {
   .then((result) => {
     renderList(result.movies);
 
-    //counter
-    const movieCount = $('.movie-items table.item').length;
-    $('.movie-counter').text(movieCount + " SHOWS & MOVIES");
-    $('.watching').click(() => {
-      if (!movieCount) {
-        $('.movie-counter').effect( "shake" , {times: 3, distance: 10} , 300);
-      }
-    });
-
+     // counter
+  const movieCount = $('.movie-items table.item').length;
+  $('.movie-counter').text(movieCount + " SHOWS & MOVIES");
+  $('.watching').click(() => {
+  if (!movieCount) {
+    $('.movie-counter').effect( "shake" , {times: 3, distance: 10} , 300);
+  }
+});
   })
   .catch((err) => {
     console.log("AJAX ERROR CAUGHT RENDER MOVIES", err);
   })
-});
+};
 
-const deleteMovie = () => {
-  $.ajax({
-    method: 'POST',
-    url: `/movies/${userId}/delete`,
-  }).then((result) => {
-    renderList(result.movies);
-})};
-
+getMovies();
 
 
   // function to render items
   const renderList = (items) => {
-    // $('.all-items').empty();
     for (item of items) {
       generateNewElement(item);
     }
@@ -49,28 +40,23 @@ const deleteMovie = () => {
 
   // function to create new items and push them into the list
   const generateNewElement = (obj) => {
-    const title = obj.title;
-    const userId = obj.user_id;
+    const name = obj.name;
     const date = new Date(obj.date_added).toISOString();
     const dateAdded = dayjs(date).fromNow();
-    const bookId = obj.id;
+    const movieId = obj.id;
 
     const $markup = `
-    <table class="item">
+    <table class="item" data-type="movies" data-itemId="${movieId}">
     <div>
         <tr>
             <td class="check-td"><input type="checkbox"><td>
             <td class="title-td">
-              <b>${title}</b>
+              <b>${name}</b>
               <div class="date-td">Added: ${dateAdded}</div>
-              <td><form method="POST" action="/edit">
-              <button type="submit" class="btn btn-outline-danger">Edit</button></form></td>
+              <td><button class="btn btn-outline-danger edit"></button>Edit</td>
               <td>
-                <form method="POST" action="/${userId}/delete">
-                <input type="hidden" name="type" value="movie" />
-                <input type="hidden" name="movie-id" value="${bookId}" />
-                  <button type="submit" class="btn btn-outline-danger">Delete</button>
-                </form></td>
+              <button class="btn btn-outline-danger delete">X</button>
+              </td>
             </td>
         </tr>
     </div>

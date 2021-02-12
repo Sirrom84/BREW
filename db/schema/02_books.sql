@@ -1,9 +1,0 @@
-DROP TABLE IF EXISTS books CASCADE;
-CREATE TABLE books (
-  id SERIAL PRIMARY KEY NOT NULL,
-  title VARCHAR(255) NOT NULL,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  author VARCHAR(255) NOT NULL,
-  date_added DATE,
-  is_complete BOOLEAN
-);

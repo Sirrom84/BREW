@@ -49,8 +49,11 @@
     <!-- Toggle Cards -->
     <script type="text/javascript" src="/scripts/app-click.js"></script>
 
-    <!-- Checkbox Ajex -->
-    <script type="text/javascript" src="/scripts/app-checkbox.js"></script>
+    <!-- Delete button -->
+    <script type="text/javascript" src="/scripts/app-delete.js"></script>
+
+      <!-- Edit button -->
+      <script type="text/javascript" src="/scripts/app-edit.js"></script>
 
     <!-- Dayjs for Timestamp -->
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
@@ -62,91 +65,81 @@
     <!-- Favicon -->
     <link rel="icon" href="/styles/favicon.ico" type="image/png" />
 
-</head>
-
-<body>
-
-
-  <nav>
-    <span>Add: </span>
-
-
-    <form id="myform" class="search">
-
-      <input id="book-search" name="add-search" type="text" placeholder=" " />
-      <button class="btn red"><i class="uil uil-search"></i></button>
-
-      <!-- <div class="input-field">
-        <input type="search" id="books">
-         <label for="search">Search Books</label>
+  </head>
+  <body>
+    <nav>
+      <span>Add: </span>
+      <form class="search" name="search" target="#here" method="post">
+        <input
+          name="add-search"
+          type="text"
+          placeholder=" "
+        /><br />
+        <input
+          type="submit"
+          style="height: 0px; width: 0px; border: none; padding: 0px"
+          hidefocus="true"
+        />
+      </form>
+      <div>
+        <span class="bubble">Where do you want to move it?</span>
+        <img src="https://i.ibb.co/fY32MY0/andy3.png" />
       </div>
-       -->
-    </form>
-    <div>
-      <span class="bubble"> random quote </span>
-      <img class="userimg" src="https://i.ibb.co/fY32MY0/andy3.png" />
-    </div>
-  </nav>
+    </nav>
 
-  <!-- Popup here -->
-  <div class="popup">
-    <div class="close">&times;</div>
-    <div id="result" class="result-container"></div>
-  </div>
+    <main>
+      <!-- BOOKS -->
 
-  </nav>
+      <article class="book" data-type="1">
+        <div class="reading card">
+          <!-- visible card -->
+          <h2 class="book">Read</h2>
+          <div class="book-counter"></div>
+          <section class="book-items">
 
-  <main class="main">
-    <!-- BOOKS -->
+          </section>
+        </div>
+      </article>
 
-    <article>
-      <div class="reading card">
-        <!-- visible card -->
-        <h2 class="book">Read</h2>
-        <div class="book-counter"></div>
-        <section class="book-items"></section>
-      </div>
-    </article>
+      <!-- Restaurants -->
 
-    <!-- Restaurants -->
+      <article data-type="3">
+        <div class="eating card">
+          <h2 class="eat">Eat</h2>
+          <div class="food-counter"></div>
 
-    <article>
-      <div class="eating card">
-        <h2 class="eat">Eat</h2>
-        <div class="food-counter"></div>
+          <section class="food-items">
+            <!-- Items in the list goes here -->
+          </section>
+        </div>
+      </article>
 
-        <section class="food-items">
-          <!-- Items in the list goes here -->
-        </section>
-      </div>
-    </article>
+      <!-- Movies -->
 
-    <!-- Movies -->
+      <article data-type="2">
+        <div class="watching card">
+          <h2 class="watch">Watch</h2>
+          <div class="movie-counter"></div>
+          <section class="movie-items">
+            <!-- Items in the list goes here -->
+          </section>
+        </div>
+      </article>
 
-    <article>
-      <div class="watching card">
-        <h2 class="watch">Watch</h2>
-        <div class="movie-counter"></div>
-        <section class="movie-items">
-          <!-- Items in the list goes here -->
-        </section>
-      </div>
-    </article>
+      <!-- Products -->
 
-    <!-- Products -->
+      <article data-type="4">
+        <div class="buying card">
+          <h2 class="buy">Buy</h2>
+          <div class="product-counter"></div>
+          <section class="product-items">
+            <!-- Items in the list goes here -->
+          </section>
+        </div>
+      </article>
+    </main>
 
-    <article>
-      <div class="buying card">
-        <h2 class="buy">Buy</h2>
-        <div class="product-counter"></div>
-        <section class="product-items">
-          <!-- Items in the list goes here -->
-        </section>
-      </div>
-    </article>
-  </main>
-
-</body>
-<!-- Testing for checkbox customization -->
-
+    <!-- Footer -->
+  </body>
+  <!-- Testing for checkbox customization -->
 </html>
