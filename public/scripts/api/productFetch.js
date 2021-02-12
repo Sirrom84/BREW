@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(() => {
 
   $('.result.container').hide();
 
@@ -14,7 +14,7 @@ $(document).ready(function () {
     let search = $("#book-search").val();
 
     $.get(`/products/buy/${search}`, function (response) {
-
+      //lets just give back 10 options//
       response.slice(0,10).forEach(element => {
 
           let img = $( `<img class="aligning card z-depth-5" id="dynamic"><br><a href="${element.image}"><button id="imagebutton" class="btn red aligning">Add TODO</button></a>`);

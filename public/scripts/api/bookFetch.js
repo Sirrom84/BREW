@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(() => {
 
   $('.result.container').hide();
   $(".search-form").submit(function () {
