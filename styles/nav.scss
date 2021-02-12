@@ -86,6 +86,11 @@ nav {
 }
 
 #instructions {
-  font-size: 20px;
+  font-size: 1rem;
   align-self: flex-end // NEW
+}
+
+.login-instructions {
+  font-size: 1rem;
+  font-weight: 400;
 }

@@ -62,8 +62,6 @@ $(() => {
               .then(() => {
                 console.log("New Items Created")
                 loadBooks();
-                $("#search").val(' ');
-                location.reload();
               })
               .catch(err => {
                 console.log(err)

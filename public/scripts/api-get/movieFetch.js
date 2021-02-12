@@ -55,11 +55,7 @@ $(() => {
         })
       });
 
-    return false; //prevent the form from auto submitting
-    } else {
-
-      $(".error").show();
-      location.reload();
+    return false; //prevent the form from auto submittin
 
     }
   })

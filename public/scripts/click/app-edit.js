@@ -14,8 +14,8 @@ $(() => {
       $.post(`/${list}/${userId}/edit`, data)
         .then(() => {
           $itemToEdit.remove();
-          $(`.${empty}-items`).empty();
           callback();
+          location.reload();
         })
         .catch(err => {
           console.log(err)
@@ -59,9 +59,5 @@ $(() => {
         data["categoryId"] = $eat.attr('data-type');
         sendPost("products", "products", data, loadProducts);
         })
-
-
     })
-
-
   });
