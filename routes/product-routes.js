@@ -6,7 +6,7 @@ let API_KEY = "C25033A4B2C84329A544B107DB021CAB";
 
 
 //REST we will make the search dynamic.
-const userSearch = "xbox";
+const userSearch = "Rake"
 //Request params
 const params = {
 
@@ -29,9 +29,9 @@ module.exports = (db) => {
 
 
 
-        res.send(JSON.stringify(response.data.search_results, 0, 2));
+        res.send(response.data.search_results, 0, 2);
         const search = response.data.search_results;
-        //Just want to display 5 or 10 items to the user
+        // Just want to display 5 or 10 items to the user
         search.slice(0,10).forEach(element => {
           console.log("NAME: " + element["title"] + " IMG: " + element["image"]);
 

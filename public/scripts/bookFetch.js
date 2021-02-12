@@ -5,15 +5,21 @@ $(document).ready(function () {
   $("#myform").submit(function () {
 
     $('.popup').show();
-    $('nav').click(function(){
+
+    $('nav').click(function() {
+
       $('.popup').hide();
+
     });
-    $('.close').click(function(){
+
+    $('.close').click(function() {
+
       $('.popup').hide();
-    })
+
+    });
 
     let search = $("#book-search").val();
-    ////////////////////////GOOGLE_BOOKS_API_FETCH/////////////////////
+
     $.get("https://www.googleapis.com/books/v1/volumes?q=" + search + "+intitle", function (response) {
         console.log('HERES MY LOG FOR THE RESPONSE:', response.items);
 
