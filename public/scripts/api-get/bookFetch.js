@@ -6,54 +6,68 @@ $(document).ready(function () {
   $('.result.container').hide();
 
   $(".search-form").submit(function () {
+
+    let userSearch = $("#search").val();
+    console.log("This is my book entry:", userSearch);
+
     $('.popup').show();
 
     $('.close').click(() => {
       $('.popup').hide();
     });
 
-    let search = $("#search").val();
+    if (userSearch[0] === "R" || userSearch[0] === "r") {
 
-    $.get("https://www.googleapis.com/books/v1/volumes?q=" + search + "+intitle", function (response) {
-        console.log('HERES MY LOG FOR THE RESPONSE:', response.items);
+      let textEntry = userSearch.split(" ");
+      const textArr = textEntry.shift();
+      const search = textEntry.join(" ");
 
-        for (let i = 0; i < response.items.length; i++) {
+      console.log("This is my book search:", search);
 
-          let img = $('<img class="books-img" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button class="imagebutton">Visit Google Books</button></a><br><button class="add-button">Add</button>');
-          let title = $('<h3 class="search-title">' + response.items[i].volumeInfo.title + '</h3>');
-          let author = $('<address class="search-author"> By: ' + response.items[i].volumeInfo.authors + '</address><hr>');
+      $.get("https://www.googleapis.com/books/v1/volumes?q=" + search + "+intitle", function (response) {
+          console.log('HERES MY LOG FOR THE RESPONSE:', response.items);
 
-          let url = response.items[i].volumeInfo.imageLinks.thumbnail;
+          for (let i = 0; i < response.items.length; i++) {
+            let img = $(`<img class="books-img" id="dynamic"><br>
+            <a href=` + response.items[i].volumeInfo.infoLink + '><button class="imagebutton">Visit Google Books</button></a><br><button class="add-button">Add</button>');
+            let title = $(`<h3 class="search-title" data-title="${response.items[i].volumeInfo.title}">` + response.items[i].volumeInfo.title + '</h3>');
+            let author = $('<address class="search-author"> By: ' + response.items[i].volumeInfo.authors + '</address><hr>');
 
-          img.attr('src', url);
-          img.appendTo('#result');
-          title.appendTo('#result');
-          author.appendTo('#result');
-        }
+            let url = response.items[i].volumeInfo.imageLinks.thumbnail;
 
-        // create new item
-        $('.add-button').click((event) => {
+            img.attr('src', url);
+            img.appendTo('#result');
+            title.appendTo('#result');
+            author.appendTo('#result');
+          }
 
-          const $addImg = $(event.target).siblings('img.books-img');
-          // img: $addImg.attr('src')
-          const data = {
-            name: search
-          };
+          // create new item
+          $('.add-button').click((event) => {
+            const $book = $(event.target).next('h3.search-title');
+            console.log( $book);
+            const title = $book.attr('data-title')
+            console.log("This is the title", title)
 
-          console.log("This is the img from add button", data)
+            const data = {
+              name: title
+            };
 
-          $.post(`/books/${userId}/new`, data)
-            .then(() => {
-              console.log("New Items Created")
-              loadBooks();
-            })
-            .catch(err => {
-              console.log(err)
-            })
-        })
-      });
+            // console.log("This is the img from add button", data)
 
+            $.post(`/books/${userId}/new`, data)
+              .then(() => {
+                console.log("New Items Created")
+                loadBooks();
+                location.reload();
+              })
+              .catch(err => {
+                console.log(err)
+              })
+          })
+        });
 
-    return false;
+      return false;
+    };
   });
+
 });

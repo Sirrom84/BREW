@@ -30,7 +30,9 @@ module.exports = (db) => {
   //post request to create new item
   router.post('/:id/new', (req, res) => {
     const userId = req.params.id;
+    console.log("This is the req.body", req.body)
     const name = req.body["name"];
+    console.log("this is the name:", name)
     const capName =  name.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
     const date_added = new Date().toISOString().slice(0, 10);
     const values = [userId, capName, date_added];

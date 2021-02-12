@@ -11,7 +11,7 @@ $(() => {
       url: `/products/${userId}`,
     })
       .then((result) => {
-        renderList(result.products);
+        renderProductList(result.products);
 
         //counter
         const itemCount = $(".product-items table.item").length;
@@ -37,14 +37,14 @@ $(() => {
   });
 
   // function to render items
-  const renderList = (items) => {
+  const renderProductList = (items) => {
     for (item of items) {
-      generateNewElement(item);
+      generateProductElement(item);
     }
   };
 
   // function to create new items and push them into the list
-  const generateNewElement = (obj) => {
+  const generateProductElement = (obj) => {
     const name = obj.name;
     const date = new Date(obj.date_added).toISOString();
     const dateAdded = dayjs(date).fromNow();

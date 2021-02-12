@@ -1,17 +1,10 @@
-$(() => {
-
-  dayjs.extend(window.dayjs_plugin_relativeTime);
-
-  const userURL = window.location.pathname;
-  const userId = userURL.slice(1);
-
 const loadRestaurants = () => {
     $.ajax({
       method: "GET",
       url: `/restaurants/${userId}`
     })
     .then((result) => {
-      renderList(result.restaurants);
+      renderFoodList(result.restaurants);
 
       //counter
       const resCount = $('.food-items table.item').length;
@@ -31,42 +24,48 @@ const loadRestaurants = () => {
     .catch((err) => {
       console.log("AJAX ERROR CAUGHT RENDER MOVIES", err);
     });
+};
+
+const renderFoodList = (items) => {
+  for (item of items) {
+    console.log("This is the render function")
+    generateFoodElement(item);
+  }
+};
+
+const generateFoodElement = (obj) => {
+  const name = obj.name;
+  const rawDate = obj.date_added;
+  const date = new Date(rawDate).toISOString();
+  const dateAdded = dayjs(date).fromNow();
+  const foodId = obj.id;
+
+  const $markup = `
+  <table class="item" data-type="restaurants" data-itemId="${foodId}">
+  <div>
+      <tr class>
+          <td class="title-td">
+            <b>${name}</b>
+            <div class="date-td">Added: ${dateAdded}</div>
+          </td>
+          <td><button class="edit"><i class="uil uil-pen"></i></i></button></td>
+        <td><button class="delete"><i class="uil uil-minus-circle"></i></button></td>
+      </tr>
+  </div>
+  <table>
+  `;
+
+  const $item = $('.food-items').prepend($markup);
+  return $item;
+  console.log("This is the create function")
 }
 
-loadRestaurants();
+$(() => {
 
-    // function to render items
-    const renderList = (items) => {
-      for (item of items) {
-        generateNewElement(item);
-      }
-    };
+  dayjs.extend(window.dayjs_plugin_relativeTime);
 
-    // function to create new items and push them into the list
-    const generateNewElement = (obj) => {
-      const name = obj.name;
-      const rawDate = obj.date_added;
-      const date = new Date(obj.date_added).toISOString();
-      const dateAdded = dayjs(date).fromNow();
-      const foodId = obj.id;
+  loadRestaurants();
+  console.log("This is the kasjdlskajdlk function")
 
-      const $markup = `
-      <table class="item" data-type="restaurants" data-itemId="${foodId}">
-      <div>
-          <tr class>
-              <td class="title-td">
-                <b>${name}</b>
-                <div class="date-td">Added: ${dateAdded}</div>
-              </td>
-              <td><button class="edit"><i class="uil uil-pen"></i></i></button></td>
-            <td><button class="delete"><i class="uil uil-minus-circle"></i></button></td>
-          </tr>
-      </div>
-      <table>
-      `;
-
-      const $item = $('.food-items').prepend($markup);
-      return $item;
-    }
   });
 

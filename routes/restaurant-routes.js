@@ -12,8 +12,6 @@ let yelpREST = axios.create({
   },
 })
 
-
-
 module.exports = (db) => {
 //put this inside of this routing to work around axios
   router.get("/yelp", (req, res) => {
@@ -55,6 +53,7 @@ module.exports = (db) => {
       .then(data => {
         const restaurants = data.rows;
         res.json({ restaurants });
+        console.log("RES ARE LOADED")
       })
       .catch(err => {
         console.log("HERE IS THE ERROR" ,err);
