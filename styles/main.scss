@@ -111,6 +111,11 @@ tr {
   text-align: right;
 }
 
+.yelp-image {
+  height: 10rem;
+  width: 10rem;
+}
+
 @media only screen and (max-width: 1000px) {
   main {
     display: flex;

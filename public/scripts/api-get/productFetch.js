@@ -12,7 +12,7 @@ $(() => {
       $('.popup').hide();
   });
 
-  let search = $("#book-search").val();
+  let search = $("#search").val();
 
   $.get(`/products/buy/${search}`,  response => {
       //lets just give back 10 options//

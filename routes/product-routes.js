@@ -2,7 +2,7 @@ const express = require('express');
 const router  = express.Router();
 const axios = require("axios");
 const { response } = require('express');
-let API_KEY = "AA3663A2AD84442BA93C2311488DA2A7";
+let API_KEY = "4ECDAD44CCBE407189F07CDEE5AA20DA";
 
 module.exports = (db) => {
 //inside of this to route axios /buy is just temp until  we can get the db linked
@@ -27,12 +27,7 @@ module.exports = (db) => {
 
      .then(response => {
         res.send(response.data.search_results, 0, 2);
-        // const search = response.data.search_results;
-        // Just want to display 5 or 10 items to the user
-        // search.slice(0,10).forEach(element => {
-        //   console.log("NAME: " + element["title"] + " IMG: " + element["image"]);
 
-        // });
 
 
       }).catch(error => {

@@ -36,10 +36,11 @@ module.exports = (db) => {
         const array = [];
         businesses.forEach((b) => {
         const obj = {
-
           name: b.name,
-          Address: b.location.display_address[0,1],
-          Phone: b.display_phone
+          Address: b.location.display_address,
+          Phone: b.display_phone,
+          rating: b.rating,
+          image: b.image_url
         };
         array.push(obj)
 
@@ -122,7 +123,6 @@ module.exports = (db) => {
 
   return router;
   };
-
 
 
 
