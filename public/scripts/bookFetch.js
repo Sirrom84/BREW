@@ -18,7 +18,7 @@ $(document).ready(function () {
 
     });
 
-    let search = $("#book-search").val();
+    let search = $(".search").val();
 
     $.get("https://www.googleapis.com/books/v1/volumes?q=" + search + "+intitle", function (response) {
         console.log('HERES MY LOG FOR THE RESPONSE:', response.items);
