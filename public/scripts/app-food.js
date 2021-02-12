@@ -53,13 +53,13 @@ loadRestaurants();
       const $markup = `
       <table class="item" data-type="restaurants" data-itemId="${foodId}">
       <div>
-          <tr class="test">
+          <tr class>
               <td class="title-td">
                 <b>${name}</b>
                 <div class="date-td">Added: ${dateAdded}</div>
               </td>
-              <td><button class="btn btn-outline-danger edit"></button>Edit</td>
-              <td><button class="btn btn-outline-danger delete">X</button></td>
+              <td><button class="edit"><i class="uil uil-pen"></i></i></button></td>
+            <td><button class="delete"><i class="uil uil-minus-circle"></i></button></td>
           </tr>
       </div>
       <table>

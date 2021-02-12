@@ -26,9 +26,6 @@ module.exports = (db) => {
     axios.get('https://api.rainforestapi.com/request', {params})
 
      .then(response => {
-
-
-
         res.send(response.data.search_results, 0, 2);
         const search = response.data.search_results;
         // Just want to display 5 or 10 items to the user
@@ -43,10 +40,6 @@ module.exports = (db) => {
       });
 
   });
-
-
-
-
 
   router.get("/:id", (req, res) => {
     db.query(`

@@ -4,7 +4,6 @@
  *   these routesare mounted onto /users
  * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
  */
-
 const express = require('express');
 const router  = express.Router();
 
@@ -27,6 +26,27 @@ module.exports = (db) => {
         res.status(500).json({ error: err.message});
       });
   });
+
+  //post request to create new item
+  router.post('/:id/new', (req, res) => {
+    const userId = req.params.id;
+    const name = req.body["name"];
+    const capName =  name.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
+    const date_added = new Date().toISOString().slice(0, 10);
+    const values = [userId, capName, date_added];
+    console.log("This is the values to add:", values)
+
+    db.query(`
+    INSERT INTO items (category_id, user_id, name, date_added)
+    VALUES (1, $1, $2, $3)`, values)
+      .then(data => {
+        const newBook = data.rows;
+        res.json({ newBook})
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  })
 
   //post request to delete
   router.post("/:id/delete", (req,res) => {

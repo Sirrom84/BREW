@@ -52,10 +52,8 @@ getMovies();
             <td class="title-td">
               <b>${name}</b>
               <div class="date-td">Added: ${dateAdded}</div>
-              <td><button class="btn btn-outline-danger edit"></button>Edit</td>
-              <td>
-              <button class="btn btn-outline-danger delete">X</button>
-              </td>
+              <td><button class="edit"><i class="uil uil-pen"></i></i></button></td>
+            <td><button class="delete"><i class="uil uil-minus-circle"></i></button></td>
             </td>
         </tr>
     </div>
