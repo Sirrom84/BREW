@@ -49,7 +49,6 @@ $(() => {
     const date = new Date(obj.date_added).toISOString();
     const dateAdded = dayjs(date).fromNow();
     const productId = obj.id;
-    console.log("THiss is the product obj:", obj)
 
     const $markup = `
     <table class="item" data-type="products" data-itemId="${productId}">
@@ -60,6 +59,7 @@ $(() => {
               <b class="name-b">${name}</b>
               <div class="date-td">Added: ${dateAdded}</div>
             </td>
+            <td><button class="btn btn-outline-danger edit"></button>Edit</td>
             <td><button class="btn btn-outline-danger delete">X</button></td>
         </tr>
     </div>

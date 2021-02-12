@@ -36,7 +36,6 @@ $(() => {
 
   // function to render items
   const renderList = (items) => {
-    // $('.all-items').empty();
     for (item of items) {
       generateNewElement(item);
     }
@@ -50,17 +49,14 @@ $(() => {
     const itemId = obj.id;
 
     const $markup = `
-    <table class="item" data-type="books" data-itemId="${itemId}" data-name="${name}" data-date="${obj.date_added}">
+    <table class="item" data-type="books" data-itemId="${itemId}">
     <div>
         <tr>
-            <td class="check-td"><input type="checkbox" class="checkbox">
-            </td>
-
+            <td class="check-td"><input type="checkbox" class="checkbox"></td>
             <td class="title-td">
               <b class="name-b">${name}</b>
               <div class="date-td">Added: ${dateAdded}</div>
             </td>
-
             <td><button class="btn btn-outline-danger edit"></button>Edit</td>
             <td><button class="btn btn-outline-danger delete">X</button></td>
 

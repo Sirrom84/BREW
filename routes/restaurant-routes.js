@@ -7,8 +7,9 @@ module.exports = (db) => {
   router.get("/:id", (req, res) => {
     db.query(`
     SELECT *
-    FROM restaurants
+    FROM items
     WHERE user_id = $1
+    AND category_id = 3
     ORDER BY date_added;`, [req.params.id])
       .then(data => {
         const restaurants = data.rows;
@@ -28,8 +29,9 @@ module.exports = (db) => {
     const values = [userId, itemId];
 
     db.query(`
-    DELETE FROM restaurants
+    DELETE FROM items
     WHERE user_id = $1
+    AND category_id = 3
     AND id = $2;`, values)
       .then(data => {
         const restaurants = data.rows;
@@ -46,32 +48,17 @@ module.exports = (db) => {
   router.post("/:id/edit", (req,res) => {
     const userId = req.params.id;
     const itemId = req.body["itemId"];
-    const table = req.body["category"];
-    const name = req.body["name"];
-    const date = req.body["date"];
-    const deleteValues = [userId, itemId]
-    const addValues = [userId, name, date];
-    console.log("Thses are my values from RES:", deleteValues)
-    console.log("Thses are my values from RES:", addValues)
+    const categoryId = req.body["categoryId"]
+    const values = [categoryId, userId, itemId]
+    console.log("Thses are my values:", values)
 
     const editItem = `
-    DELETE FROM restaurants
-    WHERE user_id = $1
-    AND id = $2;`
-
-    db.query(editItem, deleteValues)
-      .then(data => {
-        console.log("this works:", data)
-      })
-      .catch(err => {
-          console.log(err)
-        });
-
-    const addItem = `
-    INSERT INTO ${table} (user_id, name, date_added)
-    VALUES ($1, $2, $3);`
-
-    db.query(addItem, addValues)
+    UPDATE items
+    SET category_id = $1
+    WHERE user_id = $2
+    AND id = $3
+    RETURNING *;`
+    db.query(editItem, values)
       .then(data => {
         const restaurants = data.rows;
         res.json({ restaurants });
@@ -82,27 +69,9 @@ module.exports = (db) => {
         });
       });
 
-  router.get("/:id/edit", (req,res) => {
-    const userId = req.params.id;
-    const itemId = req.body["itemId"];
-    const table = req.body["category"];
-    const name = req.body["name"];
-    const date = req.body["date"];
-    const deleteValues = [userId, itemId]
-    const addValues = [userId, name, date];
-
-    const newItem = `
-    SELECT * FROM ${table}
-    `
-
-  });
+  return router;
+  };
 
 
 
 
-
-
-
-      return router;
-
-    };

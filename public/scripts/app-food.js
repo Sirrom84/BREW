@@ -5,7 +5,7 @@ $(() => {
   const userURL = window.location.pathname;
   const userId = userURL.slice(1);
 
-  $(function()  {
+const loadRestaurants = () => {
     $.ajax({
       method: "GET",
       url: `/restaurants/${userId}`
@@ -30,12 +30,13 @@ $(() => {
     })
     .catch((err) => {
       console.log("AJAX ERROR CAUGHT RENDER MOVIES", err);
-    })
-  });
+    });
+}
+
+loadRestaurants();
 
     // function to render items
     const renderList = (items) => {
-      // $('.food-items').empty();
       for (item of items) {
         generateNewElement(item);
       }
@@ -50,7 +51,7 @@ $(() => {
       const foodId = obj.id;
 
       const $markup = `
-      <table class="item" data-type="restaurants" data-itemId="${foodId}" data-name="${name}" data-date="${rawDate}">
+      <table class="item" data-type="restaurants" data-itemId="${foodId}">
       <div>
           <tr class="test">
               <td class="check-td"><input type="checkbox"><td>

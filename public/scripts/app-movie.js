@@ -53,9 +53,7 @@ getMovies();
             <td class="title-td">
               <b>${name}</b>
               <div class="date-td">Added: ${dateAdded}</div>
-              <td><form method="POST" action="/edit">
-              <button type="submit" class="btn btn-outline-danger">Edit</button></form>
-              </td>
+              <td><button class="btn btn-outline-danger edit"></button>Edit</td>
               <td>
               <button class="btn btn-outline-danger delete">X</button>
               </td>

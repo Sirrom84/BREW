@@ -1,5 +1,5 @@
 main {
-  width: 92%;
+  width: 94%;
   margin: 10vh auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -41,7 +41,7 @@ table {
   font-size: 0.9rem;
   font-weight: 400;
   width: 100%;
-  border-spacing: 10px;
+  border-spacing: 0;
 }
 
 tr {
@@ -59,6 +59,8 @@ tr {
 .title-td {
   text-align: left;
 }
+
+
 
 // line across text
 // .title-td {
@@ -94,10 +96,11 @@ tr {
   text-decoration: line-through;
 }
 
-input[type=checkbox]{
+.checkbox:checked + .title-td ~ .name-b {
   cursor: pointer;
-  width: 1.3em;
-  height: 1.3em;
+  // width: 1.3em;
+  // height: 1.3em;
+  text-decoration: line-through;
 }
 
 // delete button
