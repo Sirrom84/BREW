@@ -3,6 +3,8 @@ const router  = express.Router();
 const axios = require("axios"); //needed for the yelp request.
 let API_KEY = "y3q3LPGT4Z8NTG8gTez1pcmUrWAmZELHkzaLSISaYoq1CZpurxchYdvAph9dI4Itx5Msfpexss8dlUh_4EmfSaEgeNHShGppJqylgKumLnXzFu8bAN7rt7c1VEQjYHYx" // we'll figure out a better way for this
 
+
+
 // REST
 let yelpREST = axios.create({
   baseURL: "https://api.yelp.com/v3/",
@@ -14,25 +16,33 @@ let yelpREST = axios.create({
 
 module.exports = (db) => {
 //put this inside of this routing to work around axios
-  router.get("/yelp", (req, res) => {
+  router.get('/yelp/:search', (req, res) => {
+   console.log("FOOD REQ",req.params.search);
+
 //will need to figure this out right now /yelp is showing us the json object for kyoto Edmonton
     yelpREST("/businesses/search", {
       params: {
-        location: "Edmonton", //this can be figured out with geotracking
-        term: "kyoto", //user submission coming soon.
-        limit: 20,
+        location: "Vancouver", //this can be figured out with geotracking
+        term: req.params.search,
+        limit: 10
       },
+
     }).then(({ data }) => {
       const results = {};
       let { businesses } = data;
       results.businesses = businesses;
 
       // console.log("BUNIESS LOG:", businesses);
-       const array = [];
-      businesses.forEach((b) => {
-        const obj = {name: b.name, Address: b.location.display_address[0,1], Phone: b.display_phone};
+        const array = [];
+        businesses.forEach((b) => {
+        const obj = {
+
+          name: b.name,
+          Address: b.location.display_address[0,1],
+          Phone: b.display_phone
+        };
         array.push(obj)
-        // console.log("Name: ", b.name, "Adress: ", b.location.display_address[0,1], "Phone: ", b.display_phone)
+
       })
 
       res.send(JSON.stringify(array));
@@ -56,7 +66,7 @@ module.exports = (db) => {
         console.log("RES ARE LOADED")
       })
       .catch(err => {
-        console.log("HERE IS THE ERROR" ,err);
+        console.log(err);
         res
           .status(500)
           .json({ error: err.message});
