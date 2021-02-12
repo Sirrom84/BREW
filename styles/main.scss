@@ -19,7 +19,7 @@ main {
     margin-top: 0;
     font-weight:600;
     font-size: 2rem;
-    padding: 0.8em; //added - jinny
+    padding: 0.8em;
   }
 
   .book-counter,
@@ -62,12 +62,11 @@ tr {
 .title-td {
   text-align: left;
 }
-// line across text
-// .title-td {
-//   text-decoration: line-through;
-// }
 
-// each list
+.button-td {
+  text-align: right;
+}
+
 .reading {
   --light: #EFCDCD;
   --dark: #E5A9BB;
@@ -95,12 +94,9 @@ tr {
 
 .checkbox:checked + .title-td ~ .name-b {
   cursor: pointer;
-  // width: 1.3em;
-  // height: 1.3em;
   text-decoration: line-through;
 }
 
-// delete button
 .delete {
   font-size: 1.1rem;
   cursor: pointer;
@@ -112,6 +108,7 @@ tr {
   padding: 20px;
   font-size: 1.1rem;
   cursor: pointer;
+  text-align: right;
 }
 
 @media only screen and (max-width: 1000px) {

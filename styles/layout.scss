@@ -1,12 +1,5 @@
 // See: https://sass-lang.com/
 
-// on branch: style/front-end
-//to do list:
-// x 1. center, create grid for main 4 boxes
-// 2. connect checkboxes with ajax
-// x 3. fix clicking problem - make click only list (not white space)
-// 4. add edit/delete --> three .. (connect edit and delete to backend) edit -> renaming & moving lists
-
 html,
 body {
   height: 100%;
@@ -22,11 +15,3 @@ body {
   background: white;
   overflow: auto;
 }
-
-// @media only screen and (max-width: 950px) {
-//   html, body {
-
-
-//   }
-
-// }

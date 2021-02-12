@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(() => {
 
   const userURL = window.location.pathname;
   const userId = userURL.slice(1);
@@ -23,9 +23,8 @@ $(document).ready(function () {
       const search = textEntry.join(" ");
       console.log("This is my movie search:", search);
 
-    $.get(`http://www.omdbapi.com/?apikey=21bcaad3&t=${search}`,
-      function (response) {
-        console.log("HERE IS THE RESPONSE",response );
+    $.get(`http://www.omdbapi.com/?apikey=21bcaad3&t=${search}`, response => {
+        // console.log("HERE IS THE RESPONSE",response );
 
         let title = $(`<h3 class="search-title">${response.Title}</h3>`);
         let img = $( `<img class="books-img"><a href=${response.Poster}><br>

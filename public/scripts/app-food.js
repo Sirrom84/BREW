@@ -48,8 +48,8 @@ const generateFoodElement = (obj) => {
             <b>${name}</b>
             <div class="date-td">Added: ${dateAdded}</div>
           </td>
-          <td><button class="edit"><i class="uil uil-pen"></i></i></button></td>
-        <td><button class="delete"><i class="uil uil-minus-circle"></i></button></td>
+          <td class="button-td"><button class="edit"><i class="uil uil-pen"></i></i></button></td>
+          <td class="button-td"><button class="delete"><i class="uil uil-minus-circle"></i></button></td>
       </tr>
   </div>
   <table>

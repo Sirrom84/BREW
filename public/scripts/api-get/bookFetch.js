@@ -1,11 +1,11 @@
-$(document).ready(function () {
+$(() => {
 
   const userURL = window.location.pathname;
   const userId = userURL.slice(1);
 
   $('.result.container').hide();
 
-  $(".search-form").submit(function () {
+  $(".search-form").submit(() => {
 
     let userSearch = $("#search").val();
     console.log("This is my book entry:", userSearch);
@@ -22,10 +22,10 @@ $(document).ready(function () {
       const textArr = textEntry.shift();
       const search = textEntry.join(" ");
 
-      console.log("This is my book search:", search);
+      // console.log("This is my book search:", search);
 
-      $.get("https://www.googleapis.com/books/v1/volumes?q=" + search + "+intitle", function (response) {
-          console.log('HERES MY LOG FOR THE RESPONSE:', response.items);
+      $.get("https://www.googleapis.com/books/v1/volumes?q=" + search + "+intitle", response => {
+          // console.log('HERES MY LOG FOR THE RESPONSE:', response.items);
 
           for (let i = 0; i < response.items.length; i++) {
             let img = $(`<img class="books-img" id="dynamic"><br>

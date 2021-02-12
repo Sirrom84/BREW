@@ -39,8 +39,8 @@ const generateMovieElement = (obj) => {
           <td class="title-td">
             <b>${name}</b>
             <div class="date-td">Added: ${dateAdded}</div>
-            <td><button class="edit"><i class="uil uil-pen"></i></i></button></td>
-          <td><button class="delete"><i class="uil uil-minus-circle"></i></button></td>
+            <td class="button-td"><button class="edit"><i class="uil uil-pen"></i></i></button></td>
+            <td class="button-td"><button class="delete"><i class="uil uil-minus-circle"></i></button></td>
           </td>
       </tr>
   </div>

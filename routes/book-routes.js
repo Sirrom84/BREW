@@ -11,6 +11,7 @@ module.exports = (db) => {
 
   //display books for a specific user
   router.get("/:id", (req, res) => {
+
     db.query(`
     SELECT *
     FROM items
@@ -29,6 +30,7 @@ module.exports = (db) => {
 
   //post request to create new item
   router.post('/:id/new', (req, res) => {
+
     const userId = req.params.id;
     console.log("This is the req.body", req.body)
     const name = req.body["name"];
@@ -39,6 +41,7 @@ module.exports = (db) => {
     console.log("This is the values to add:", values)
 
     db.query(`
+
     INSERT INTO items (category_id, user_id, name, date_added)
     VALUES (1, $1, $2, $3)`, values)
       .then(data => {
@@ -52,6 +55,7 @@ module.exports = (db) => {
 
   //post request to delete
   router.post("/:id/delete", (req,res) => {
+
     const userId = req.params.id;
     const itemId = req.body["itemId"];
     const values = [userId, itemId];
