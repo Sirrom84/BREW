@@ -1,28 +1,19 @@
 $(document).ready(function () {
 
-  $('.popup, .result.container').hide();
-
-  $("#myform").submit(function () {
-
+  $('.result.container').hide();
+  $(".search-form").submit(function () {
     $('.popup').show();
 
-    $('nav').click(function() {
-
-      $('.popup').hide();
-
-    });
 
     $('.close').click(function() {
-
       $('.popup').hide();
-
     });
 
     let search = $("#book-search").val();
 
     $.get(`http://www.omdbapi.com/?apikey=21bcaad3&t=${search}`,
       function (response) {
-        console.log("HERES MY LOG FOR THE MOVIE FETCH:", response);
+        console.log("HERE IS THE RESPONSE MOVIES",response );
 
         let title = $(`<h5 class="center-align white-text">${response.Title}</h5>`);
 
