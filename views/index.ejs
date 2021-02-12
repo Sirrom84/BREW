@@ -1,24 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Home Page</title>
+    <title>To Do List</title>
 
+    <!-- Zoom Disabled -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/popup.css" type="text/css" />
 
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css"/>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <!-- Ajax with jQuery -->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
+
+    <!-- External jQuery -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+
+    <!-- Books route -->
+    <script type="text/javascript" src="/scripts/app-books.js"></script>
+
+    <script type="text/javascript" src="/scripts/api-get/bookFetch.js"></script>
+
+    <script type="text/javascript" src="/scripts/api-post/bookAdd.js"></script>
+
+    <!-- Food route -->
+    <script type="text/javascript" src="/scripts/app-food.js"></script>
+
+    <!-- Movie route -->
+    <script type="text/javascript" src="/scripts/app-movie.js"></script>
+
+    <script type="text/javascript" src="/scripts/api-get/movieFetch.js"></script>
+
+    <!-- Product route -->
+    <script type="text/javascript" src="/scripts/app-products.js"></script>
+
+    <!-- Toggle Cards -->
+    <script type="text/javascript" src="/scripts/click/app-click.js"></script>
+
+    <!-- Delete button -->
+    <script type="text/javascript" src="/scripts/click/app-delete.js"></script>
+
+    <!-- Edit button -->
+    <script type="text/javascript" src="/scripts/click/app-edit.js"></script>
+
+    <!-- Checkbox Ajex -->
+    <script type="text/javascript" src="/scripts/click/app-checkbox.js"></script>
+
+     <!-- Add New item -->
+     <script type="text/javascript" src="/scripts/api-post/bookAdd.js"></script>
+
+    <!-- Dayjs for Timestamp -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/plugin/relativeTime.js"></script>
+
+    <!-- Soratablejs -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/styles/favicon.ico" type="image/png" />
   </head>
-
   <body>
-    <h1>Smart TODO List</h1>
 
-    <div class="grid2x2">
-      <div class="box box1"><div>Restaurants</div></div>
-      <div class="box box2"><div>Movies</div></div>
-      <div class="box box3"><div>Books</div></div>
-      <div class="box box4"><div>Products</div></div>
-    </div>
+    <nav>
+      <span>Add:</span>
+      <form class="search-form" name="search" target="#here" method="post">
+
+        <input id="search" name="add-search" type="text" placeholder="" />
+        <button class="btn red"><i class="uil uil-search"></i></button>
+      </form>
+
+      <div>
+        <span class="bubble">Click the list you want to move it too!</span>
+        <img class="userimg" src="https://i.ibb.co/fY32MY0/andy3.png" />
+      </div>
+
+
+      <div class="popup">
+        <div class="close">&times;</div>
+        <div id="result" class="result-container"></div>
+      </div>
+
+    </nav>
+
+    <main class="main">
+
+      <!-- Products -->
+
+      <article data-type="4">
+        <div class="buying card">
+          <h2 class="buy">Buy</h2>
+          <div class="product-counter"></div>
+          <section class="product-items">
+            <!-- Items in the list goes here -->
+          </section>
+        </div>
+      </article>
+
+      <!-- BOOKS -->
+
+      <article class="book" data-type="1">
+        <div class="reading card">
+          <!-- visible card -->
+          <h2 class="book">Read</h2>
+          <div class="book-counter"></div>
+          <section class="book-items"></section>
+        </div>
+      </article>
+
+
+
+      <!-- Restaurants -->
+
+      <article data-type="3">
+        <div class="eating card">
+          <h2 class="eat">Eat</h2>
+          <div class="food-counter"></div>
+          <section class="food-items"></section>
+        </div>
+      </article>
+
+      <article data-type="2">
+        <div class="watching card">
+          <h2 class="watch">Watch</h2>
+          <div class="movie-counter"></div>
+          <section class="movie-items">
+            <!-- Items in the list goes here -->
+          </section>
+        </div>
+      </article>
+
+
+
+    </main>
+
+    <!-- Footer -->
   </body>
+  <!-- Testing for checkbox customization -->
+</html>
+  <!-- Testing for checkbox customization -->
 </html>

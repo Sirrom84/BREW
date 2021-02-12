@@ -1,30 +1,32 @@
 // See: https://sass-lang.com/
 
-html, body {
+// on branch: style/front-end
+//to do list:
+// x 1. center, create grid for main 4 boxes
+// 2. connect checkboxes with ajax
+// x 3. fix clicking problem - make click only list (not white space)
+// 4. add edit/delete --> three .. (connect edit and delete to backend) edit -> renaming & moving lists
+
+html,
+body {
   height: 100%;
+  width: 100%;
   margin: 0;
-  font-size: 32px;
-}
-.grid2x2 {
-  min-height: 100%;
+  padding: 0;
+  background-color: #f3f3f3;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  color: #555555;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-.grid2x2 > div {
-  display: flex;
-  flex-basis: calc(50% - 40px);
-  justify-content: center;
   flex-direction: column;
-}
-.grid2x2 > div > div {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
+  background: white;
+  overflow: auto;
 }
 
-.box { margin: 20px; }
-.box1 { background-color: rgb(226, 104, 104); }
-.box2 { background-color: rgb(243, 201, 124); }
-.box3 { background-color: rgb(228, 170, 228); }
-.box4 { background-color: grey; }
+// @media only screen and (max-width: 950px) {
+//   html, body {
+
+
+//   }
+
+// }

@@ -1,0 +1,132 @@
+main {
+  width: 94%;
+  margin: 10vh auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.9rem;
+}
+
+.card {
+  padding: 2rem 2rem;
+  background: #EFCDCD;
+  border-radius: 1rem;
+  color: white;
+  background: linear-gradient(-60deg, var(--light), var(--dark));
+  position: relative;
+  box-shadow: #FEEBDC 0px 25px 50px -12px;
+
+  h2 {
+    margin-top: 0;
+    font-weight:600;
+    font-size: 2rem;
+    padding: 0.8em; //added - jinny
+  }
+
+  .book-counter,
+  .food-counter,
+  .movie-counter,
+  .product-counter {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.589);
+    padding-left: 1.5rem;
+  }
+}
+
+.card:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+
+table.item {
+  padding-top: 2rem;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  font-weight: 400;
+  width: 100%;
+  border-spacing: 0;
+}
+
+tr {
+  border-bottom: 1pt solid rgba(255, 255, 255, 0.233);
+  height: 4rem;
+  padding: 0;
+}
+
+.date-td {
+  color: rgba(255, 255, 255, 0.589);
+  text-align: left;
+  font-size: 0.8rem;
+}
+
+.title-td {
+  text-align: left;
+}
+// line across text
+// .title-td {
+//   text-decoration: line-through;
+// }
+
+// each list
+.reading {
+  --light: #EFCDCD;
+  --dark: #E5A9BB;
+}
+.watching {
+  --light: #1A1C1E;
+  --dark: #414141;
+}
+.eating {
+  --light:#94D3E4;
+  --dark: #A2C8EC;
+}
+.buying {
+  --light:#EDDEF6;
+  --dark: #CEB6D9;
+}
+
+.book-items, .food-items, .movie-items, .product-items {
+  display: none;
+}
+
+.strikeout {
+  text-decoration: line-through;
+}
+
+.checkbox:checked + .title-td ~ .name-b {
+  cursor: pointer;
+  // width: 1.3em;
+  // height: 1.3em;
+  text-decoration: line-through;
+}
+
+// delete button
+.delete {
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: red;
+  text-align: right;
+}
+
+.edit {
+  padding: 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1000px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 95%;
+  }
+
+  .card {
+    padding: 1rem 1rem;
+  }
+  .card:hover {
+    transform: none;
+    transition: none;
+  }
+}
