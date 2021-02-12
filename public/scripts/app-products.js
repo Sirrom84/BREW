@@ -54,7 +54,6 @@ $(() => {
     <table class="item" data-type="products" data-itemId="${productId}">
     <div>
         <tr>
-            <td class="check-td"><input type="checkbox" class="checkbox"><td>
             <td class="title-td">
               <b class="name-b">${name}</b>
               <div class="date-td">Added: ${dateAdded}</div>

@@ -1,21 +1,14 @@
 $(document).ready(function () {
 
-  $('.popup, .result.container').hide();
-
-  $("#myform").submit(function () {
-
+  $('.result.container').hide();
+  $(".search-form").submit(function () {
     $('.popup').show();
-
-    $('nav').click(function() {
-
-      $('.popup').hide();
-
-    });
+    // $('nav').click(function() {
+    //   $('.popup').hide();
+    // });
 
     $('.close').click(function() {
-
       $('.popup').hide();
-
     });
 
     let search = $("#book-search").val();
@@ -34,11 +27,6 @@ $(document).ready(function () {
           author.appendTo('#result');
         }
       });
-
-
-
     return false;
   });
-
-
 });

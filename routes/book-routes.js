@@ -12,7 +12,6 @@ module.exports = (db) => {
 
   //display books for a specific user
   router.get("/:id", (req, res) => {
-    console.log("THIS IS our req params:", req.params.id)
     db.query(`
     SELECT *
     FROM items

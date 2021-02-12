@@ -71,9 +71,6 @@ tr {
 .title-td {
   text-align: left;
 }
-
-
-
 // line across text
 // .title-td {
 //   text-decoration: line-through;
@@ -81,23 +78,20 @@ tr {
 
 // each list
 .reading {
-  --light:#B5DDDA;
-  --dark: #A0C4C1;
+  --light: #EFCDCD;
+  --dark: #E5A9BB;
 }
-
-.eating {
-  --light: #AED5D2;
-  --dark: #557C79;
-}
-
 .watching {
   --light: #1A1C1E;
   --dark: #414141;
 }
-
+.eating {
+  --light:#94D3E4;
+  --dark: #A2C8EC;
+}
 .buying {
-  --light:#2A362F;
-  --dark: #090908;
+  --light:#EDDEF6;
+  --dark: #CEB6D9;
 }
 
 .book-items, .food-items, .movie-items, .product-items {
