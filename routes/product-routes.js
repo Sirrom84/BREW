@@ -2,7 +2,7 @@ const express = require('express');
 const router  = express.Router();
 const axios = require("axios");
 const { response } = require('express');
-let API_KEY = "346E54F4250F4D81A4B33E291D6943F9";
+let API_KEY = "AA3663A2AD84442BA93C2311488DA2A7";
 
 module.exports = (db) => {
 //inside of this to route axios /buy is just temp until  we can get the db linked
