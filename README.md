@@ -4,9 +4,9 @@ This Smart To-Do App is a single page application that sorts the users input int
 
 ## Screenshots
 
-!['Homepage']
-!['SearchItem']
-!['AddItem']
+!['Homepage'](https://github.com/Sirrom84/BREW/blob/master/public/homePage.png?raw=true)
+!['SearchItem'](https://github.com/Sirrom84/BREW/blob/master/public/addToList.png?raw=true)
+!['AddItem'](https://github.com/Sirrom84/BREW/blob/master/public/afterAdd.png?raw=true)
 
 ## Getting Started
 
